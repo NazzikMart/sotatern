@@ -1,0 +1,19 @@
+.FilterProduct {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.category-item {
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    transition: all .5s ease;
+}
+
+.category-item:hover {
+    border: 1px solid gray;
+}

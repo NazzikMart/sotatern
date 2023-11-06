@@ -1,0 +1,44 @@
+.navbar-nav {
+    margin-left: 100px;
+}
+
+.besket {
+    margin-left: 20px;
+    color: rgb(255, 255, 255);
+    /* background-color: rgb(37, 187, 137); */
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.profile {
+    /* margin-right: 10px; */
+    color: rgb(255, 255, 255);
+    /* background-color: rgb(206, 221, 35); */
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 15px;
+}
+
+.fa-user,
+.fa-basket-shopping {
+    font-size: 25px;
+}
+
+.besket a {
+    color: white;
+}
+
+.fa-basket-shopping:hover {
+    color: greenyellow;
+}
+
+.profile a {
+    color: white;
+}
+
+.profile a:hover {
+    color: rgb(223, 56, 56);
+}
