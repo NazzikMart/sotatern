@@ -15,9 +15,6 @@ export default class Navbar extends Component {
     return (
       <div className="navbar-wrapper">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <Link className="navbar-brand" to="/">
-            Сота - студія техніки
-          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -53,16 +50,58 @@ export default class Navbar extends Component {
                 </Link>
               </li>
             </ul>
-            <span className="profile">
-              <Link to="/profile">
-                <i className="fa-sharp fa-solid fa-user"></i>
-              </Link>
+            <span className="profile ">
+              <Link to="/profile">Акунт</Link>
             </span>
             <span className="besket">
-              <Link to="/besket">
-                <i className="fa-sharp fa-solid fa-basket-shopping"></i>
-              </Link>
+              <Link to="/besket">Кошик</Link>
             </span>
+          </div>
+        </nav>
+        <nav className="navbar navbar-light bg-light padding">
+          <div className="Logo">
+            <img
+              src="https://www.pngall.com/wp-content/uploads/2/S-Letter-PNG-Photo.png"
+              className="logo-img"
+            />
+            <div className="logo-items">
+              <Link className="navbar-brand" to="/">
+                Сота - студія техніки
+              </Link>
+              <span>Електроніка та побутова техніка</span>
+            </div>
+          </div>
+
+          <span className=" color-blue" to="/number">
+            <i className="fa-solid fa-phone"></i> +380-97-46-13-997
+          </span>
+        </nav>
+        <nav className="navbar navbar-dark bg-dark padding">
+          <div
+            className="form-inline"
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+            }}
+          >
+            <Link
+              to="/catalog"
+              style={{
+                marginLeft: "30px",
+              }}
+              className="product-catalog-btn"
+            >
+              Каталог товарів <i className="fa-solid fa-bars"></i>
+            </Link>
+            <input
+              className="form-control search"
+              type="search"
+              placeholder="пошук товару..."
+              aria-label="Search"
+              style={{
+                width: "700px",
+              }}
+            />
           </div>
         </nav>
 
@@ -77,7 +116,20 @@ export default class Navbar extends Component {
             }
           />
           <Route path="/about" element={<About />} />
-          <Route path="/catalog" element={<ProductCatalog />} />
+          <Route
+            path="/catalog"
+            element={
+              <ProductCatalog
+                addToOrder={this.props.addToOrder}
+                product={this.props.product}
+                orders={this.props.orders}
+                removeProduct={this.props.removeProduct}
+                counter={this.props.counter}
+                totalCost={this.props.totalCost}
+                updateOrders={this.props.updateOrders}
+              />
+            }
+          />
           <Route path="/contact" element={<Contact />} />
           <Route
             path="/besket"

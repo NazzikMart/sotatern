@@ -42,3 +42,76 @@
 .profile a:hover {
     color: rgb(223, 56, 56);
 }
+
+.padding {
+    padding: 20px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+
+.color-blue {
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo-items {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+}
+
+.search {
+    width: 700px;
+    margin-left: 30px;
+    height: 50px;
+}
+
+.product-catalog-btn {
+    height: 50px;
+    width: 300px;
+    border: none;
+    background-color: rgb(246, 87, 87);
+    color: white;
+    font-weight: 600;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    transition: all .4s ease;
+    text-decoration: none;
+}
+
+.product-catalog-btn:active {
+
+    outline: none;
+}
+
+.product-catalog-btn:focus {
+
+    outline: none;
+}
+
+.product-catalog-btn:hover {
+    background-color: rgb(122, 122, 122);
+    color: white;
+    text-decoration: none;
+}

@@ -90,8 +90,8 @@
 }
 
 .form-contact-name:focus {
-    border-color: rgb(0, 115, 255);
-    color: rgb(0, 115, 255);
+    border-color: rgb(246, 87, 87);
+    color: rgb(246, 87, 87);
 }
 
 .form-contact-phone {
@@ -106,8 +106,8 @@
 }
 
 .form-contact-phone:focus {
-    border-color: rgb(0, 115, 255);
-    color: rgb(0, 115, 255);
+    border-color: rgb(246, 87, 87);
+    color: rgb(246, 87, 87);
 }
 
 .form-contact-comment {
@@ -121,8 +121,8 @@
 }
 
 .form-contact-comment:focus {
-    border-color: rgb(0, 115, 255);
-    color: rgb(0, 115, 255);
+    border-color: rgb(246, 87, 87);
+    color: rgb(246, 87, 87);
 }
 
 .form-contact-button {
@@ -137,7 +137,7 @@
 }
 
 .form-contact-button:hover {
-    background-color: rgb(0, 115, 255);
+    background-color: rgb(246, 87, 87);
     color: white;
-    border-color: rgb(0, 115, 255);
+    border-color: rgb(246, 87, 87);
 }

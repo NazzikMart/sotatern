@@ -29,21 +29,9 @@ export default class BestSellers extends Component {
         <div className="BestSellers">
           {this.props.product.map((item) => {
             return (
-              <div
-                className="BestCard"
-                style={{
-                  width: "250px",
-                }}
-                key={item.id}
-              >
+              <div className="BestCard" key={item.id}>
                 <div className="cardItems">
-                  <img
-                    src={item.img}
-                    style={{
-                      height: "200px",
-                    }}
-                    className="img-card"
-                  />
+                  <img src={item.img} className="img-card" />
                   <span className="item-name">{item.name}</span>
                   <span className="item-model">{item.model}</span>
                   <div className="rating">
@@ -63,12 +51,16 @@ export default class BestSellers extends Component {
                   </div>
                   <div className="prices">
                     <span className="item-price">{item.price} &#8372; </span>
-                    <span onClick={() => this.props.addToOrder(item)}>
-                      <i className="fa-sharp fa-solid fa-cart-shopping"></i>
-                    </span>
+                    <span className="item-availability">В наявності 4</span>
                   </div>
                   <div className="buttons">
-                    <span></span>
+                    <button className="item-besket-btn">
+                      <span onClick={() => this.props.addToOrder(item)}>
+                        <i className="fa-sharp fa-solid fa-cart-shopping"></i>В
+                        корзину
+                      </span>
+                    </button>
+                    <button className="item-shop-btn">Купити в 1 клік</button>
                   </div>
                 </div>
               </div>
