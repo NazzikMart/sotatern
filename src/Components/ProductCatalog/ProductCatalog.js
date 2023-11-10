@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import "./ProductCatalog.css";
+import Product from "../Product/Product.js";
+import { Route, Routes } from "react-router";
+import { Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "../Navbar/Navbar.js";
 
 export default class ProductCatalog extends Component {
   constructor(props) {
@@ -13,13 +18,13 @@ export default class ProductCatalog extends Component {
         { name: "Magio", id: 4, category: "producer" },
       ],
       categories: [
-        { key: "all", name: "Все" },
-        { key: "Kettle", name: "Чайник" },
-        { key: "telephone", name: "Телефон" },
-        { key: "Grill", name: "Гриль" },
-        { key: "Microwave", name: "Мікрохвильовка" },
-        { key: "VacuumCleaner", name: "Пилосос" },
-        { key: "ThermalMug", name: "Термокружка" },
+        { key: "all", name: "Всі" },
+        { key: "Kettle", name: "Чайники" },
+        { key: "telephone", name: "Телефони" },
+        { key: "Grill", name: "Грилі" },
+        { key: "Microwave", name: "Мікрохвильовки" },
+        { key: "VacuumCleaner", name: "Пилососи" },
+        { key: "ThermalMug", name: "Термокружки" },
       ],
       product: [
         {
@@ -34,7 +39,7 @@ export default class ProductCatalog extends Component {
         {
           name: "Телефон",
           price: 1100,
-          model: "SilverCrest",
+          model: "Magio",
           category: "telephone",
           id: 2,
           counter: 1,
@@ -52,7 +57,7 @@ export default class ProductCatalog extends Component {
         {
           name: "Мікрохвильовка",
           price: 1100,
-          model: "SilverCrest",
+          model: "Magio",
           category: "Microwave",
           id: 4,
           counter: 1,
@@ -70,7 +75,7 @@ export default class ProductCatalog extends Component {
         {
           name: "Термокружка",
           price: 1100,
-          model: "SilverCrest",
+          model: "SeaBreeze",
           category: "ThermalMug",
           id: 6,
           counter: 1,
@@ -114,9 +119,13 @@ export default class ProductCatalog extends Component {
         },
       ],
       currentItems: [],
+      newItem: [],
+      minPrice: "",
+      maxPrice: "",
     };
     this.state.currentItems = this.state.product;
     this.choseCategory = this.choseCategory.bind(this);
+    this.renderElement = this.renderElement.bind(this);
   }
   choseCategory(category) {
     if (category === "all") {
@@ -129,6 +138,26 @@ export default class ProductCatalog extends Component {
       });
     }
   }
+  filterByPrice = () => {
+    const minPrice = parseInt(this.state.minPrice);
+    const maxPrice = parseInt(this.state.maxPrice);
+
+    if (!isNaN(minPrice) && !isNaN(maxPrice)) {
+      const filteredProducts = this.state.product.filter(
+        (el) => el.price >= minPrice && el.price <= maxPrice
+      );
+
+      this.setState({ currentItems: filteredProducts });
+    }
+  };
+  renderElement = (el) => {
+    console.log(el);
+    this.setState({
+      newItem: [...this.state.newItem, el],
+    });
+    console.log(this.state.newItem);
+  };
+
   render() {
     return (
       <div className="product-catalog-wrapper">
@@ -158,10 +187,24 @@ export default class ProductCatalog extends Component {
                 <span className="list-item-filter-price">Ціна грн</span>
                 <div className="filter-price">
                   <label className="filter-price-label">
-                    <input className="filter-price-input" placeholder="ВІД" />
+                    <input
+                      className="filter-price-input"
+                      placeholder="ВІД"
+                      value={this.state.minPrice}
+                      onChange={(e) =>
+                        this.setState({ minPrice: e.target.value })
+                      }
+                    />
                   </label>
                   <label className="filter-price-label">
-                    <input className="filter-price-input" placeholder="ДО" />
+                    <input
+                      className="filter-price-input"
+                      placeholder="ДО"
+                      value={this.state.maxPrice}
+                      onChange={(e) =>
+                        this.setState({ maxPrice: e.target.value })
+                      }
+                    />
                   </label>
                 </div>
               </div>
@@ -197,7 +240,12 @@ export default class ProductCatalog extends Component {
                 </select>
               </div>
               <div className="list-item-show">
-                <button className="list-item-show-btn">Показати</button>
+                <button
+                  className="list-item-show-btn"
+                  onClick={this.filterByPrice}
+                >
+                  Показати
+                </button>
               </div>
             </div>
           </ul>
@@ -229,48 +277,65 @@ export default class ProductCatalog extends Component {
             </div>
           </div>
           <div className="product-catalog-items">
-            {this.state.currentItems.map((item) => {
-              return (
-                <div className="BestCard" key={item.id}>
-                  <div className="cardItems">
-                    <img src={item.img} className="img-card" />
-                    <span className="item-name">{item.name}</span>
-                    <span className="item-model">{item.model}</span>
-                    <div className="rating">
-                      <div className="stars">
-                        <i className="fa-sharp fa-solid fa-star"></i>
-                        <i className="fa-sharp fa-solid fa-star"></i>
-                        <i className="fa-sharp fa-solid fa-star"></i>
-                        <i className="fa-sharp fa-solid fa-star"></i>
-                        <i className="fa-sharp fa-solid fa-star"></i>
+            {this.state.currentItems.length > 0 ? (
+              this.state.currentItems.map((item) => {
+                return (
+                  <div className="BestCard" key={item.id}>
+                    <div className="cardItems">
+                      <img src={item.img} className="img-card" />
+                      <span className="item-name">{item.name}</span>
+                      <span className="item-model">{item.model}</span>
+                      <div className="rating">
+                        <div className="stars">
+                          <i className="fa-sharp fa-solid fa-star"></i>
+                          <i className="fa-sharp fa-solid fa-star"></i>
+                          <i className="fa-sharp fa-solid fa-star"></i>
+                          <i className="fa-sharp fa-solid fa-star"></i>
+                          <i className="fa-sharp fa-solid fa-star"></i>
+                        </div>
+                        <div className="heart">
+                          <i
+                            className="fa-sharp fa-solid fa-heart"
+                            onClick={this.props.addClass}
+                          ></i>
+                        </div>
                       </div>
-                      <div className="heart">
-                        <i
-                          className="fa-sharp fa-solid fa-heart"
-                          onClick={this.props.addClass}
-                        ></i>
-                      </div>
-                    </div>
-                    <div className="prices">
-                      <span className="item-price">{item.price} &#8372; </span>
-                      <span className="item-availability">В наявності 4</span>
-                    </div>
-                    <div className="buttons">
-                      <button
-                        className="item-besket-btn"
-                        onClick={() => this.props.addToOrder(item)}
-                      >
-                        <span>
-                          <i className="fa-sharp fa-solid fa-cart-shopping"></i>
-                          В корзину
+                      <div className="prices">
+                        <span className="item-price">
+                          {item.price} &#8372;{" "}
                         </span>
-                      </button>
-                      <button className="item-shop-btn">Купити в 1 клік</button>
+                        <span className="item-availability">В наявності 4</span>
+                      </div>
+                      <div className="buttons">
+                        <button
+                          className="item-besket-btn"
+                          onClick={() => this.props.addToOrder(item)}
+                        >
+                          <span>
+                            <i className="fa-sharp fa-solid fa-cart-shopping"></i>
+                            В корзину
+                          </span>
+                        </button>
+                        <button className="item-shop-btn">
+                          Купити в 1 клік
+                        </button>
+                      </div>
+                      <Link
+                        to="/product"
+                        className="product-details-btn"
+                        onClick={() => this.props.infoProduct(item)}
+                      >
+                        Більш про товар
+                      </Link>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })
+            ) : (
+              <div className="no-products-message">
+                Товарів з такою ціною немає
+              </div>
+            )}
           </div>
         </div>
       </div>

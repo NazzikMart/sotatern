@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../Header/Header";
 import FilterProduct from "../FilterProduct/FilterProduct";
 import BestSellers from "../BestSellers/BestSellers";
+import ProductCategories from "../ProductCategories/ProductCategories";
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -32,11 +33,15 @@ export default class HomePage extends Component {
     return (
       <div>
         <Header />
+        <ProductCategories />
         <span className="BestSellersName">Лідери продажів</span>
         <FilterProduct choseCategory={this.choseCategory} />
+
         <BestSellers
           product={this.state.currentItems}
           addToOrder={this.props.addToOrder}
+          infoProducts={this.props.infoProducts}
+          infoProduct={this.props.infoProduct}
         />
       </div>
     );

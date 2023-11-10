@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./BestSellers.css";
+import { Link } from "react-router-dom";
 
 export default class BestSellers extends Component {
   constructor(props) {
@@ -57,11 +58,18 @@ export default class BestSellers extends Component {
                     <button className="item-besket-btn">
                       <span onClick={() => this.props.addToOrder(item)}>
                         <i className="fa-sharp fa-solid fa-cart-shopping"></i>В
-                        корзину
+                        кошик
                       </span>
                     </button>
                     <button className="item-shop-btn">Купити в 1 клік</button>
                   </div>
+                  <Link
+                    to="/product"
+                    className="product-details-btn"
+                    onClick={() => this.props.infoProduct(item)}
+                  >
+                    Більш про товар
+                  </Link>
                 </div>
               </div>
             );

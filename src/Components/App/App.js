@@ -103,10 +103,12 @@ class App extends React.Component {
       orders: [],
       counter: 1,
       totalCost: 0,
+      infoProducts: [],
     };
 
     this.addToOrder = this.addToOrder.bind(this);
     this.removeProduct = this.removeProduct.bind(this);
+    this.infoProduct = this.infoProduct.bind(this);
   }
   updateOrders = (updatedOrders, totalCost) => {
     this.setState({
@@ -122,6 +124,11 @@ class App extends React.Component {
       },
       this.calculateTotalCost
     );
+  };
+  infoProduct = (item) => {
+    this.setState({
+      infoProducts: [item],
+    });
   };
 
   removeProduct = (productId) => {
@@ -154,6 +161,8 @@ class App extends React.Component {
           counter={this.state.counter}
           totalCost={this.state.totalCost}
           updateOrders={this.updateOrders}
+          infoProduct={this.infoProduct}
+          infoProducts={this.state.infoProducts}
         />
         <Footer />
       </div>

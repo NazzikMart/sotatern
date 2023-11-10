@@ -46,6 +46,11 @@
     width: 400px;
     border: 1px solid rgb(222, 222, 222);
     margin: 10px;
+    cursor: pointer;
+}
+
+.BestCard:hover {
+    text-decoration: none;
 }
 
 .cardItems {
@@ -61,6 +66,8 @@
     font-size: 20px;
     font-weight: 600;
     margin-top: 20px;
+    color: black;
+    text-decoration: none;
 }
 
 .item-model {
@@ -102,6 +109,8 @@
 .item-price {
     font-size: 25px;
     font-weight: 800;
+    color: black;
+    text-decoration: none;
 }
 
 .item-availability {
@@ -381,4 +390,29 @@
 
 .marg-sort {
     margin-right: 20px;
+}
+
+.product-details-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgb(150, 150, 150);
+    color: rgb(150, 150, 150);
+    transition: all .3s ease;
+}
+
+.product-details-btn:hover {
+    text-decoration: none;
+    background-color: rgb(150, 150, 150);
+    color: white;
+}
+
+.no-products-message {
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 500;
 }

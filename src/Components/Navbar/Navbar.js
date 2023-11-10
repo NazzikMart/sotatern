@@ -9,6 +9,7 @@ import Contact from "../Contact/Contact.js";
 import Besket from "../Besket/Besket.js";
 import HomePage from "../HomePage/HomePage";
 import Profile from "../Profile/Profile.js";
+import Product from "../Product/Product.js";
 
 export default class Navbar extends Component {
   render() {
@@ -103,6 +104,15 @@ export default class Navbar extends Component {
               }}
             />
           </div>
+          <Link
+            to="/catalog"
+            style={{
+              marginLeft: "30px",
+            }}
+            className="product-remont-btn"
+          >
+            Ремонт техніки <i className="fa-solid fa-bars"></i>
+          </Link>
         </nav>
 
         <Routes>
@@ -112,6 +122,8 @@ export default class Navbar extends Component {
               <HomePage
                 product={this.props.product}
                 addToOrder={this.props.addToOrder}
+                infoProduct={this.props.infoProduct}
+                infoProducts={this.props.infoProducts}
               />
             }
           />
@@ -127,6 +139,8 @@ export default class Navbar extends Component {
                 counter={this.props.counter}
                 totalCost={this.props.totalCost}
                 updateOrders={this.props.updateOrders}
+                infoProduct={this.props.infoProduct}
+                infoProducts={this.props.infoProducts}
               />
             }
           />
@@ -144,6 +158,18 @@ export default class Navbar extends Component {
             }
           />
           <Route path="/profile" element={<Profile />} />
+
+          <Route
+            path="/product"
+            element={
+              <Product
+                infoProducts={this.props.infoProducts}
+                addToOrder={this.props.addToOrder}
+                product={this.props.product}
+                orders={this.props.orders}
+              />
+            }
+          />
         </Routes>
       </div>
     );
