@@ -1,0 +1,150 @@
+.navbar-nav {
+    margin-left: 100px;
+}
+
+.besket {
+    margin-left: 20px;
+    color: rgb(255, 255, 255);
+    /* background-color: rgb(37, 187, 137); */
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.profile {
+    /* margin-right: 10px; */
+    color: rgb(255, 255, 255);
+    /* background-color: rgb(206, 221, 35); */
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 15px;
+}
+
+.fa-user,
+.fa-basket-shopping {
+    font-size: 25px;
+}
+
+.besket a {
+    color: white;
+}
+
+.fa-basket-shopping:hover {
+    color: greenyellow;
+}
+
+.profile a {
+    color: white;
+}
+
+.profile a:hover {
+    color: rgb(223, 56, 56);
+}
+
+.padding {
+    padding: 20px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+
+.color-blue {
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo-items {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+}
+
+.search {
+    width: 700px;
+    margin-left: 30px;
+    height: 50px;
+}
+
+.product-catalog-btn {
+    height: 50px;
+    width: 300px;
+    border: none;
+    background-color: rgb(246, 87, 87);
+    color: white;
+    font-weight: 600;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    transition: all .4s ease;
+    text-decoration: none;
+}
+
+.product-catalog-btn:active {
+
+    outline: none;
+}
+
+.product-catalog-btn:focus {
+
+    outline: none;
+}
+
+.product-catalog-btn:hover {
+    background-color: rgb(122, 122, 122);
+    color: white;
+    text-decoration: none;
+}
+
+.product-remont-btn {
+    height: 50px;
+    width: 300px;
+    border: none;
+    background-color: rgb(134, 134, 134);
+    color: white;
+    font-weight: 600;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    transition: all .4s ease;
+    text-decoration: none;
+}
+
+.product-remont-btn:hover {
+    background-color: rgb(53, 53, 53);
+    color: white;
+    text-decoration: none;
+}
+
+.list-group-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.list-group-item span {
+    margin-left: 10px;
+}
