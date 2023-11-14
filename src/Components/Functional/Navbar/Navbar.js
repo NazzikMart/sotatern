@@ -54,10 +54,15 @@ export default class Navbar extends Component {
               </li>
             </ul>
             <span className="profile ">
-              <Link to="/profile">Акунт</Link>
+              <Link to="/profile" className="profile-link">
+                Акунт
+              </Link>
             </span>
             <span className="besket">
-              <Link to="/besket">Кошик</Link>
+              <Link to="/besket" className="besket-link">
+                {" "}
+                Кошик
+              </Link>
             </span>
           </div>
         </nav>
@@ -68,7 +73,7 @@ export default class Navbar extends Component {
               className="logo-img"
             />
             <div className="logo-items">
-              <Link className="" to="/">
+              <Link className="logo-item__navbar" to="/">
                 Сота - студія техніки
               </Link>
               <span>Електроніка та побутова техніка</span>
@@ -81,7 +86,7 @@ export default class Navbar extends Component {
         </nav>
         <nav className="navbar navbar-dark bg-dark padding">
           <div
-            className="form-inline"
+            className="form-inline buttons-navbar"
             style={{
               display: "flex",
               justifyContent: "space-around",

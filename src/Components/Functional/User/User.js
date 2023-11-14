@@ -7,7 +7,7 @@ export default class User extends Component {
       <div className="user-wrapper">
         <div className="user-left-menu">
           <div className="left-menu-items">
-            <ul className="list-group">
+            <ul className="list-group list-group-users">
               <li className="list-group-item list-group-item__user">
                 <i class="fa-solid fa-database"></i> <span>Мої дані</span>
               </li>

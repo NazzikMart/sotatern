@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./BestSellers.css";
 import { Link } from "react-router-dom";
+import "../../media.css";
 
 export default class BestSellers extends Component {
   constructor(props) {

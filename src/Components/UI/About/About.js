@@ -98,7 +98,7 @@ export default class About extends Component {
             {this.state.producerItem.map((el) => {
               return (
                 <div className="producer-item" key={el.name}>
-                  <img src={el.img} />
+                  <img src={el.img} className="producer-item__img" />
                   {el.name}
                 </div>
               );

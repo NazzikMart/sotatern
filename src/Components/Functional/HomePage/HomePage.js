@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-
 import FilterProduct from "../FilterProduct/FilterProduct";
 import BestSellers from "../BestSellers/BestSellers";
 import Header from "../../UI/Header/Header.js";
+import "../../media.css";
 
 export default class HomePage extends Component {
   constructor(props) {

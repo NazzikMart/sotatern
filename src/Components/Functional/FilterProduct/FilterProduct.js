@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./FilterProduct.css";
-
+import "../../media.css";
 export default class FilterProduct extends Component {
   constructor(props) {
     super(props);

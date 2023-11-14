@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "../Navbar/Navbar.js";
 import Footer from "../../UI/Footer/Footer.js";
 import "../../../index.css";
+import "../../media.css";
 
 class App extends React.Component {
   constructor(props) {

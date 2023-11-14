@@ -148,3 +148,54 @@
 .list-group-item span {
     margin-left: 10px;
 }
+
+.logo-item__navbar {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+    color: black;
+}
+
+.logo-item__navbar:hover {
+    text-decoration: none;
+}
+
+.profile-link,
+.besket-link {
+    font-weight: 600;
+
+}
+
+.profile-link:hover,
+.besket-link:hover {
+    text-decoration: none;
+    color: rgb(212, 79, 79);
+}
+
+@media (max-width : 420px) {
+    .logo-item__navbar {
+        font-size: 20px;
+    }
+
+    .color-blue {
+        font-size: 20px;
+    }
+
+    .navbar-btn {
+        font-size: 15px;
+        width: 200px;
+    }
+
+    .buttons-navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .padding {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -142,3 +142,35 @@
 .list-group-item__user-btn-logout:hover {
     background-color: rgb(143, 143, 143);
 }
+
+@media (max-width: 860px) {
+    .user-wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .user-left-menu {
+        width: 100%;
+        margin: 0px;
+        margin-bottom: 70px;
+    }
+
+    .left-menu-items {
+        width: 100%;
+    }
+
+    .list-group-users {
+        width: 100%;
+    }
+
+    .user-information {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .user-wrapper {
+        font-size: 10px;
+    }
+}

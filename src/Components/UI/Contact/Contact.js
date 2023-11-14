@@ -95,7 +95,7 @@ export default class Contact extends Component {
             <i className="fa-solid fa-envelope contact-icons"></i>
             <span className="contact-info-item__name">Пошта</span>
             <span className="contact-info-item__desc">
-              <a href="#">nazzikmart@gmail.com</a>
+              <a href="#">studiatehnikisota@gmail.com</a>
             </span>
           </div>
         </div>
