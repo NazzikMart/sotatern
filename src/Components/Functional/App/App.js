@@ -121,12 +121,20 @@ class App extends React.Component {
   };
 
   addToOrder = (item) => {
-    this.setState(
-      {
-        orders: [...this.state.orders, item],
-      },
-      this.calculateTotalCost
+    const isItemInOrder = this.state.orders.some(
+      (orderItem) => orderItem.id === item.id
     );
+
+    if (!isItemInOrder) {
+      this.setState(
+        {
+          orders: [...this.state.orders, item],
+        },
+        this.calculateTotalCost
+      );
+    } else {
+      console.log("Цей товар вже є в кошику");
+    }
   };
   infoProduct = (item) => {
     this.setState({

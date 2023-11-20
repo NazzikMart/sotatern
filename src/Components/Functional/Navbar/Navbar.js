@@ -12,6 +12,8 @@ import Profile from "../Profile/Profile.js";
 import Product from "../Product/Product.js";
 import Remont from "../../UI/Remont/Remont.js";
 import User from "../User/User.js";
+import logo from "../../../img/icons/logo.jpg";
+import Purchase from "../../UI/Purchase/Purchase.js";
 
 export default class Navbar extends Component {
   render() {
@@ -52,26 +54,35 @@ export default class Navbar extends Component {
                   Про нас
                 </Link>
               </li>
+              <li className=" nav-item">
+                <Link
+                  to="/profile"
+                  className="profile-link nav-link"
+                  style={{
+                    color: "rgb(212, 79, 79)",
+                  }}
+                >
+                  Акунт
+                </Link>
+              </li>
+              <li className=" nav-item">
+                <Link
+                  to="/besket"
+                  className="besket-link nav-link"
+                  style={{
+                    color: "rgb(212, 79, 79)",
+                  }}
+                >
+                  {" "}
+                  Кошик
+                </Link>
+              </li>
             </ul>
-            <span className="profile ">
-              <Link to="/profile" className="profile-link">
-                Акунт
-              </Link>
-            </span>
-            <span className="besket">
-              <Link to="/besket" className="besket-link">
-                {" "}
-                Кошик
-              </Link>
-            </span>
           </div>
         </nav>
         <nav className="navbar navbar-light bg-light padding logotip">
           <div className="Logo">
-            <img
-              src="https://www.pngall.com/wp-content/uploads/2/S-Letter-PNG-Photo.png"
-              className="logo-img"
-            />
+            <img src={logo} className="logo-img" />
             <div className="logo-items">
               <Link className="logo-item__navbar" to="/">
                 Сота - студія техніки
@@ -128,6 +139,7 @@ export default class Navbar extends Component {
           <Route path="/about" element={<About />} />
           <Route path="/remont" element={<Remont />} />
           <Route path="/user" element={<User />} />
+          <Route path="/purchase" element={<Purchase />} />
           <Route
             path="/catalog"
             element={

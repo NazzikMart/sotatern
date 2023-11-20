@@ -14,7 +14,7 @@ export default class ProductCatalog extends Component {
       producers: [
         { name: "SilverCrest", id: 1, category: "producer" },
         { name: "Elenberg", id: 2, category: "producer" },
-        { name: "Sea Brezze", id: 3, category: "producer" },
+        { name: "SeaBreeze", id: 3, category: "producer" },
         { name: "Magio", id: 4, category: "producer" },
       ],
       categories: [
@@ -39,7 +39,6 @@ export default class ProductCatalog extends Component {
           detailTwo: "Потушність",
           suffocation: "2000W",
           detailThree: "Оперативна пам'ять",
-
           type: " Чайник",
           producer: "SilverCrest",
           color: "Black",
@@ -71,6 +70,7 @@ export default class ProductCatalog extends Component {
           price: 1100,
           model: "SilverCrest",
           category: "Grill",
+          producer: "SilverCrest",
           id: 3,
           counter: 1,
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/g/c/gc772d30-1.jpg",
@@ -80,6 +80,7 @@ export default class ProductCatalog extends Component {
           price: 1100,
           model: "Magio",
           category: "Microwave",
+          producer: "Magio",
           id: 4,
           counter: 1,
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/5/1574995.jpg",
@@ -89,6 +90,7 @@ export default class ProductCatalog extends Component {
           price: 1100,
           model: "SilverCrest",
           category: "VacuumCleaner",
+          producer: "SilverCrest",
           id: 5,
           counter: 1,
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/3/2/3214_2211400052.1200x1200.jpg",
@@ -98,6 +100,7 @@ export default class ProductCatalog extends Component {
           price: 1100,
           model: "SeaBreeze",
           category: "ThermalMug",
+          producer: "SeaBreeze",
           id: 6,
           counter: 1,
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/7/176588385_images_16495315817.jpg",
@@ -107,6 +110,7 @@ export default class ProductCatalog extends Component {
           price: 1100,
           model: "SilverCrest",
           category: "ThermalMug",
+          producer: "SilverCrest",
           id: 7,
           counter: 1,
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/7/176588385_images_16495315817.jpg",
@@ -116,6 +120,7 @@ export default class ProductCatalog extends Component {
           price: 1100,
           model: "SilverCrest",
           category: "ThermalMug",
+          producer: "SilverCrest",
           id: 8,
           counter: 1,
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/7/176588385_images_16495315817.jpg",
@@ -125,6 +130,7 @@ export default class ProductCatalog extends Component {
           price: 1100,
           model: "SilverCrest",
           category: "ThermalMug",
+          producer: "SilverCrest",
           id: 9,
           counter: 1,
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/7/176588385_images_16495315817.jpg",
@@ -134,6 +140,7 @@ export default class ProductCatalog extends Component {
           price: 1100,
           model: "SilverCrest",
           category: "ThermalMug",
+          producer: "SilverCrest",
           id: 10,
           counter: 1,
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/7/176588385_images_16495315817.jpg",
@@ -141,17 +148,19 @@ export default class ProductCatalog extends Component {
       ],
       currentItems: [],
       newItem: [],
-      minPrice: "",
       maxPrice: "",
+      minPrice: "",
       hasError: false,
       searchTerm: "",
       searchResults: [],
       selectedProducers: [],
+      cardPosition: "",
     };
 
     this.state.currentItems = this.state.product;
     this.choseCategory = this.choseCategory.bind(this);
     this.renderElement = this.renderElement.bind(this);
+    this.showFunction = this.showFunction.bind(this);
   }
   choseCategory(category) {
     if (category === "all") {
@@ -178,18 +187,28 @@ export default class ProductCatalog extends Component {
       searchResults: results,
     });
   };
-  filterByPrice = () => {
-    const minPrice = parseInt(this.state.minPrice);
-    const maxPrice = parseInt(this.state.maxPrice);
-
-    if (!isNaN(minPrice) && !isNaN(maxPrice)) {
-      const filteredProducts = this.state.product.filter(
-        (el) => el.price >= minPrice && el.price <= maxPrice
-      );
-
-      this.setState({ currentItems: filteredProducts });
-    }
+  handleMinPriceChange = (event) => {
+    this.setState({ minPrice: event.target.value });
   };
+
+  handleMaxPriceChange = (event) => {
+    this.setState({ maxPrice: event.target.value });
+  };
+  filterByPcrice() {
+    if (this.state.minPrice !== "" && this.state.maxPrice !== "") {
+      const FilterProductPrice = this.state.currentItems.filter((el) => {
+        return (
+          el.price >= Number(this.state.minPrice) &&
+          el.price <= Number(this.state.maxPrice)
+        );
+      });
+      console.log(FilterProductPrice);
+      this.setState({
+        currentItems: FilterProductPrice,
+      });
+    }
+  }
+
   filterByProducer = () => {
     const { selectedProducers } = this.state;
 
@@ -200,7 +219,6 @@ export default class ProductCatalog extends Component {
 
       this.setState({ currentItems: filteredProducts });
     } else {
-      // If no producers are selected, show all products
       this.setState({ currentItems: this.state.product });
     }
   };
@@ -230,6 +248,12 @@ export default class ProductCatalog extends Component {
     console.error("Component stack trace:", info.componentStack);
     this.setState({ hasError: true });
   }
+
+  showFunction() {
+    this.filterByProducer();
+    this.filterByPcrice();
+  }
+
   render() {
     if (this.state.hasError) {
       return <div>Щось пішло не так із компонентом ProductCatalog</div>;
@@ -244,7 +268,14 @@ export default class ProductCatalog extends Component {
               <i className="fa-solid fa-sort"></i>
             </div>
             <div className="product-sort-orientations">
-              <div className="product-sort-orientations-one marg-sort">
+              <div
+                className="product-sort-orientations-one marg-sort"
+                onClick={() =>
+                  this.setState({
+                    cardPosition: "twoCard",
+                  })
+                }
+              >
                 <span></span>
                 <span></span>
                 <span></span>
@@ -419,7 +450,9 @@ export default class ProductCatalog extends Component {
                       placeholder="ВІД"
                       value={this.state.minPrice}
                       onChange={(e) =>
-                        this.setState({ minPrice: e.target.value })
+                        this.setState({
+                          minPrice: e.target.value,
+                        })
                       }
                     />
                   </label>
@@ -429,7 +462,9 @@ export default class ProductCatalog extends Component {
                       placeholder="ДО"
                       value={this.state.maxPrice}
                       onChange={(e) =>
-                        this.setState({ maxPrice: e.target.value })
+                        this.setState({
+                          maxPrice: e.target.value,
+                        })
                       }
                     />
                   </label>
@@ -471,10 +506,7 @@ export default class ProductCatalog extends Component {
               <div className="list-item-show">
                 <button
                   className="list-item-show-btn"
-                  onClick={() => {
-                    this.filterByPrice();
-                    this.filterByProducer();
-                  }}
+                  onClick={this.showFunction}
                 >
                   Показати
                 </button>

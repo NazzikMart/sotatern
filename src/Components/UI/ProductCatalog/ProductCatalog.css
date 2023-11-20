@@ -395,6 +395,7 @@
 
 .marg-sort {
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .product-details-btn {

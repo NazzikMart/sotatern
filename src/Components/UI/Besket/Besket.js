@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Besket.css";
+import { Link } from "react-router-dom";
 
 export default class Besket extends Component {
   constructor(props) {
@@ -114,7 +115,9 @@ export default class Besket extends Component {
           <span className="all-price-total">{this.props.totalCost} грн</span>
         </div>
         <div className="order-product-besket-btn">
-          <button className="order-product-besket-button">Замовити</button>
+          <Link to="/purchase" className="order-product-besket-button">
+            Замовити
+          </Link>
         </div>
       </div>
     );

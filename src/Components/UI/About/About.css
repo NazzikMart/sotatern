@@ -1,193 +1,55 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+
+
+section {
+    padding: 20px;
+    margin: 20px;
+}
+
+.about-us {
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.store-info {
+    width: 90%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
 .about-wrapper {
     width: 100%;
-}
-
-.about-name {
-    background: url('../../../img/photo_2023-11-09_14-19-36.jpg');
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-size: 40px;
-    color: white;
-    font-weight: 500;
-    background-color: black;
-
-}
-
-.name-about {
-    margin-top: 150px;
-    margin-bottom: 150px;
-    text-shadow: rgb(0, 0, 0) 1px 0 10px;
-}
-
-.about-info {
-    margin-top: 60px;
-    padding: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.about-info-text-name {
-    display: block;
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 30px;
-}
-
-.about-info-text-desc {
-    display: block;
-    font-size: 20px;
-}
-
-.about-info-text {
-    margin-left: 60px;
-}
-
-.about-producer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profucer-name {
-    font-size: 40px;
-    font-weight: 600;
-    margin-top: 40px;
-}
-
-.producer-items {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 60px;
-}
-
-.producer-item {
-    width: 20%;
-    /* height: 100px; */
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    /* border-radius: 50px; */
-    font-size: 20px;
-    /* border: 1.5px solid rgb(176, 176, 176); */
-    /* color: rgb(176, 176, 176); */
-}
-
-.producer-item img {
-    width: 50%;
-    height: 130px;
-    margin-bottom: 10px;
-}
-
-.about-fotos {
     padding: 30px;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
 }
 
-.about-fotos-name {
-    font-size: 40px;
-    font-weight: 600;
+.about-us {
+    width: 90%;
 }
 
-.about-fotos-galery {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    justify-content: space-around;
-}
-
-.about-fotos-galery__img {
-    /* text-align: center; */
-    margin-top: 40px;
-}
-
-.about-fotos-galery__images {
-
-    width: 200px;
-    margin-right: 50px;
-    height: 200px;
-    /* border: 1px solid rgb(195, 195, 195); */
-    padding: 30px;
-    border-radius: 50%;
-    transition: all .3s ease;
-    cursor: pointer;
-    transition: all .3s ease;
-}
-
-@media (max-width:1320px) {
-    .about-wrapper {
-        flex-direction: column;
-    }
-
-    .about-info {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .about-info-img {
-        width: 100%;
-    }
-
-    .info-img {
-        width: 100%;
-    }
-
-    .about-info-text {
-        width: 100%;
-        margin: 0px;
-        margin-top: 30px;
-
-    }
-
-    .about-producer {
-        flex-direction: column;
-    }
-
-    .producer-items {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-
-    .producer-item {
-        margin-bottom: 30px;
-        margin-top: 0px;
-    }
-
-    .producer-item__img {
-        width: 100%;
-    }
-
-    .about-fotos-galery {
-        flex-direction: column;
-        margin: 0px;
-        align-items: center;
-        padding: 0px;
-        text-align: center;
-    }
-}
-
-@media (max-width:450px) {
-
-    .profucer-name,
-    .about-fotos-name {
-        font-size: 20px;
-    }
+.our-products {
+    max-width: 90%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-top: 30px;
 }

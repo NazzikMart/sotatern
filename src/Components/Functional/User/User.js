@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import "./User.css";
+import Bunuses from "./user-help-components/Bonuses/Bonuses.js";
+import Chosen from "./user-help-components/Chosen/Chosen.js";
+import Data from "./user-help-components/Date/Data.js";
+import Expectation from "./user-help-components/Expectation/Expectation.js";
+import Order from "./user-help-components/Order/Order.js";
+import Question from "./user-help-components/Question/Question.js";
+import Settings from "./user-help-components/Settings/Settings.js";
 
 export default class User extends Component {
   render() {

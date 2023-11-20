@@ -192,3 +192,11 @@
         font-size: 15px;
     }
 }
+
+.contact-form__map form {
+    box-shadow: none;
+}
+
+.form-contact {
+    box-shadow: none;
+}

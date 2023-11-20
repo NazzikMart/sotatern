@@ -3,8 +3,11 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import "./Profile.css";
 import { Link } from "react-router-dom";
-import User from "../User/User";
-
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "./firebase";
 export default function Profile() {
   function handlerLogin() {
     setIsAcount(!isAccount);
@@ -12,12 +15,33 @@ export default function Profile() {
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState("");
   const [isAccount, setIsAcount] = useState(true);
+
+  const handleRegistration = async (data) => {
+    try {
+      await createUserWithEmailAndPassword(auth, data.email, data.password);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleLogin = async (data) => {
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const toggleAccount = () => {
+    setIsAcount(!isAccount);
+  };
+
   return (
     <div className="forms">
       {isAccount ? (
         <form
           className="profile-register"
-          onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}
+          onSubmit={handleSubmit(handleRegistration)}
         >
           <h2 className="register-name">Реєстрація</h2>
           <div className="profile-reg-name">
@@ -54,7 +78,7 @@ export default function Profile() {
           </div>
         </form>
       ) : (
-        <form className="profile-login">
+        <form className="profile-login" onSubmit={handleSubmit(handleLogin)}>
           <h2 className="login-name">Увійти</h2>
           {/* <div className="profile-reg-name">
           <input className="reg-name" placeholder="Введіть своє ім'я" />
@@ -69,7 +93,11 @@ export default function Profile() {
             <input className="log-password" placeholder="Введіть пароль" />
           </div>
           <div className="profile-btn-log">
-            <Link to="/user" className="btn-log log-user">
+            <Link
+              to="/user"
+              className="btn-log log-user"
+              onClick={toggleAccount}
+            >
               Увійти
             </Link>
           </div>
