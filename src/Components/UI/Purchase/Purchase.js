@@ -7,7 +7,7 @@ export default class Purchase extends Component {
       <div className="purchase-wrapper">
         <div className="contacts-datails-items">
           <div className="contacts-date-items">
-            <span className="contacts-date-item-name">Контактні дані</span>
+            <span className="contacts-date-item-name ">Контактні дані</span>
             <form className="contacts-date-item-form">
               <input
                 className="contacts-date-item-form-name"
