@@ -334,6 +334,7 @@ export default class ProductCatalog extends Component {
             addToOrder={this.props.addToOrder}
             infoProduct={this.props.infoProduct}
             currentItems={this.state.currentItems}
+            choseProducer={this.choseProducer}
           />
         </div>
         <ProductCatalogFilter
@@ -346,6 +347,7 @@ export default class ProductCatalog extends Component {
           choseCategory={this.choseCategory}
           searchTerm={this.state.searchTerm}
           handleSearch={this.handleSearch}
+          choseProducer={this.choseProducer}
         />
       </div>
     );

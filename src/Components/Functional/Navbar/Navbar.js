@@ -60,7 +60,8 @@ export default class Navbar extends Component {
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "flex-start",
-                  color: "rgb(212, 79, 79)",
+                  color: "rgba(0, 198, 94, 1)",
+
                   marginRight: "15px",
                 }}
               >
@@ -68,7 +69,7 @@ export default class Navbar extends Component {
                   to="/profile"
                   className="profile-link nav-link"
                   style={{
-                    color: "rgb(212, 79, 79)",
+                    color: "rgba(0, 198, 94, 1)",
                   }}
                 >
                   Акунт
@@ -82,14 +83,14 @@ export default class Navbar extends Component {
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "flex-start",
-                  color: "rgb(212, 79, 79)",
+                  color: "rgba(0, 198, 94, 1)",
                 }}
               >
                 <Link
                   to="/besket"
                   className="besket-link nav-link"
                   style={{
-                    color: "rgb(212, 79, 79)",
+                    color: "rgba(0, 198, 94, 1)",
                   }}
                 >
                   {" "}

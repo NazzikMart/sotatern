@@ -29,7 +29,7 @@ export default class ProductCatalogFilter extends Component {
             <div className="list-group-item list-item-filter-product list-item-filter">
               <span className="list-item-filter-name">Фільтр товарів</span>
               <input
-                className="form-control "
+                className="search-input-filterproduct"
                 type="search"
                 placeholder="пошук товару..."
                 aria-label="Search"
@@ -78,7 +78,7 @@ export default class ProductCatalogFilter extends Component {
                         type="checkbox"
                         className="list-producer-filter-checkbox"
                         checked={this.props.selectedProducers.includes(el.name)}
-                        onChange={() => this.choseProducer(el.name)}
+                        onChange={() => this.props.choseProducer(el.name)}
                       />
                       <span className="list-producer-filter__producer">
                         {el.name}

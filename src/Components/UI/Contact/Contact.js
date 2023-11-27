@@ -74,28 +74,39 @@ export default class Contact extends Component {
             <i class="fa-solid fa-map-location-dot contact-icons"></i>
             <span className="contact-info-item__name">Адреса</span>
             <span className="contact-info-item__desc">
-              <a href="#">м . Тернопіль , вул. Бродівська 14</a>
+              <a href="#" className="contact-info-item__desc">
+                м . Тернопіль , вул. Бродівська 14
+              </a>
             </span>
           </div>
           <div className="contact-info-item">
             <i class="fa-solid fa-phone contact-icons"></i>
             <span className="contact-info-item__name">Номер телефону</span>
             <span className="contact-info-item__desc">
-              <a href="#">+380974613997</a>
+              <a href="#" className="contact-info-item__desc">
+                +380974613997
+              </a>
             </span>
           </div>
           <div className="contact-info-item">
             <i class="fa-brands fa-telegram contact-icons"></i>
             <span className="contact-info-item__name">Телеграм</span>
             <span className="contact-info-item__desc">
-              <a href="https://t.me/sotatern">Сота - студія техніки</a>
+              <a
+                href="https://t.me/sotatern"
+                className="contact-info-item__desc"
+              >
+                Сота - студія техніки
+              </a>
             </span>
           </div>
           <div className="contact-info-item">
             <i className="fa-solid fa-envelope contact-icons"></i>
             <span className="contact-info-item__name">Пошта</span>
             <span className="contact-info-item__desc">
-              <a href="#">studiatehnikisota@gmail.com</a>
+              <a href="#" className="contact-info-item__desc">
+                studiatehnikisota@gmail.com
+              </a>
             </span>
           </div>
         </div>
