@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./ProductCategories.css";
-import Product from "../Product/Product";
 
 export default class ProductCategories extends Component {
   constructor(props) {

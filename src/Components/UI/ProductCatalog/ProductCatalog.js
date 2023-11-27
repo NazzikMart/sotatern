@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import "./ProductCatalog.css";
-import Product from "../../Functional/Product/Product.js";
-import { Route, Routes } from "react-router";
-import { Link } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
-import Navbar from "../../Functional/Navbar/Navbar.js";
+import ProductCatalogFilter from "../ProductCatalogFilter/ProductCatalogFilter.js";
+import ProductCatalogSort from "../ProductCatalogSort/ProductCatalogSort.js";
+import Card from "../Card/Card.js";
 
 export default class ProductCatalog extends Component {
   constructor(props) {
@@ -102,46 +100,6 @@ export default class ProductCatalog extends Component {
           category: "ThermalMug",
           producer: "SeaBreeze",
           id: 6,
-          counter: 1,
-          img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/7/176588385_images_16495315817.jpg",
-        },
-        {
-          name: "Термокружка",
-          price: 1100,
-          model: "SilverCrest",
-          category: "ThermalMug",
-          producer: "SilverCrest",
-          id: 7,
-          counter: 1,
-          img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/7/176588385_images_16495315817.jpg",
-        },
-        {
-          name: "Термокружка",
-          price: 1100,
-          model: "SilverCrest",
-          category: "ThermalMug",
-          producer: "SilverCrest",
-          id: 8,
-          counter: 1,
-          img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/7/176588385_images_16495315817.jpg",
-        },
-        {
-          name: "Термокружка",
-          price: 1100,
-          model: "SilverCrest",
-          category: "ThermalMug",
-          producer: "SilverCrest",
-          id: 9,
-          counter: 1,
-          img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/7/176588385_images_16495315817.jpg",
-        },
-        {
-          name: "Термокружка",
-          price: 1100,
-          model: "SilverCrest",
-          category: "ThermalMug",
-          producer: "SilverCrest",
-          id: 10,
           counter: 1,
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/7/176588385_images_16495315817.jpg",
         },
@@ -254,6 +212,109 @@ export default class ProductCatalog extends Component {
     this.filterByPcrice();
   }
 
+  twoCard() {
+    let cards = document.querySelector(".product-catalog-items");
+    let card = document.querySelectorAll(".BestCard");
+    let cardItems = document.querySelectorAll(".cardItems");
+    let rating = document.querySelectorAll(".rating");
+    let prices = document.querySelectorAll(".prices");
+    let name = document.querySelectorAll(".item-name");
+    let buttons = document.querySelectorAll(".buttons");
+    let button = document.querySelectorAll(".buttons button");
+    for (let index = 0; index < card.length; index++) {
+      const element = card[index];
+      element.style.width = "95%";
+      element.style.flexDirection = "row";
+      element.style.marginLeft = "30px";
+    }
+    for (let index = 0; index < button.length; index++) {
+      const element = button[index];
+      element.style.width = "100%";
+
+      element.style.marginRight = "40px";
+    }
+    for (let index = 0; index < buttons.length; index++) {
+      const element = buttons[index];
+      element.style.width = "100%";
+      element.style.flexDirection = "column";
+    }
+    for (let index = 0; index < name.length; index++) {
+      const element = name[index];
+      element.style.marginRight = "20px";
+      element.style.marginLeft = "20px";
+    }
+    for (let index = 0; index < cardItems.length; index++) {
+      const element = cardItems[index];
+      element.style.width = "100%";
+      element.style.flexDirection = "row";
+      element.style.alignItems = "center";
+    }
+    for (let index = 0; index < rating.length; index++) {
+      const element = rating[index];
+      element.style.width = "100%";
+      element.style.flexDirection = "column";
+      element.style.alignItems = "center";
+    }
+    for (let index = 0; index < prices.length; index++) {
+      const element = prices[index];
+      element.style.width = "100%";
+      element.style.flexDirection = "column";
+      element.style.alignItems = "center";
+    }
+    cards.style.flexDirection = "column";
+    cards.style.textAlign = "center";
+    cards.style.justifyContent = "center";
+  }
+
+  threeCard() {
+    let cards = document.querySelector(".product-catalog-items");
+    let card = document.querySelectorAll(".BestCard");
+    let cardItems = document.querySelectorAll(".cardItems");
+    let rating = document.querySelectorAll(".rating");
+    let prices = document.querySelectorAll(".prices");
+    let name = document.querySelectorAll(".item-name");
+    let buttons = document.querySelectorAll(".buttons");
+    let button = document.querySelectorAll(".buttons button");
+    for (let index = 0; index < card.length; index++) {
+      const element = card[index];
+      element.style.width = "30%";
+      element.style.flexDirection = "row";
+    }
+    for (let index = 0; index < button.length; index++) {
+      const element = button[index];
+
+      element.style.marginRight = "0";
+    }
+    for (let index = 0; index < buttons.length; index++) {
+      const element = buttons[index];
+
+      element.style.flexDirection = "row";
+    }
+    for (let index = 0; index < name.length; index++) {
+      const element = name[index];
+      element.style.marginRight = "0px";
+      element.style.marginLeft = "0px";
+    }
+    for (let index = 0; index < cardItems.length; index++) {
+      const element = cardItems[index];
+
+      element.style.flexDirection = "column";
+    }
+    for (let index = 0; index < rating.length; index++) {
+      const element = rating[index];
+
+      element.style.flexDirection = "row";
+      element.style.alignItems = "center";
+    }
+    for (let index = 0; index < prices.length; index++) {
+      const element = prices[index];
+
+      element.style.flexDirection = "row";
+      element.style.alignItems = "center";
+    }
+    cards.style.flexDirection = "row";
+    cards.style.width = "100%";
+  }
   render() {
     if (this.state.hasError) {
       return <div>Щось пішло не так із компонентом ProductCatalog</div>;
@@ -262,258 +323,30 @@ export default class ProductCatalog extends Component {
       <div className="product-catalog-wrapper">
         <div className="product-catalog">
           <div className="product-catalog-name">Каталог товарів</div>
-          <div className="product-sort">
-            <div className="product-sort-logo">
-              <span className="product-sort-name">Сотрувати</span>
-              <i className="fa-solid fa-sort"></i>
-            </div>
-            <div className="product-sort-orientations">
-              <div
-                className="product-sort-orientations-one marg-sort"
-                onClick={() =>
-                  this.setState({
-                    cardPosition: "twoCard",
-                  })
-                }
-              >
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div className="product-sort-orientations-two marg-sort">
-                <span></span>
-                <span></span>
-              </div>
-              <div className="product-sort-orientations-three marg-sort">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          </div>
-          <div className="product-catalog-items">
-            {this.state.searchTerm !== ""
-              ? this.state.searchResults.map((item) => {
-                  return (
-                    <div className="BestCard newBestCard" key={item.id}>
-                      <div className="cardItems">
-                        <img src={item.img} className="img-card" />
-                        <span className="item-name">{item.name}</span>
-                        <span className="item-model">{item.model}</span>
-                        <div className="rating">
-                          <div className="stars">
-                            <i className="fa-sharp fa-solid fa-star"></i>
-                            <i className="fa-sharp fa-solid fa-star"></i>
-                            <i className="fa-sharp fa-solid fa-star"></i>
-                            <i className="fa-sharp fa-solid fa-star"></i>
-                            <i className="fa-sharp fa-solid fa-star"></i>
-                          </div>
-                          <div className="heart">
-                            <i
-                              className="fa-sharp fa-solid fa-heart"
-                              onClick={this.props.addClass}
-                            ></i>
-                          </div>
-                        </div>
-                        <div className="prices">
-                          <span className="item-price">
-                            {item.price} &#8372;{" "}
-                          </span>
-                          <span className="item-availability">
-                            В наявності 4
-                          </span>
-                        </div>
-                        <div className="buttons">
-                          <button
-                            className="item-besket-btn"
-                            onClick={() => this.props.addToOrder(item)}
-                          >
-                            <span>
-                              <i className="fa-sharp fa-solid fa-cart-shopping"></i>
-                              В корзину
-                            </span>
-                          </button>
-                          <button className="item-shop-btn">
-                            Купити в 1 клік
-                          </button>
-                        </div>
-                        <Link
-                          to="/product"
-                          className="product-details-btn"
-                          onClick={() => this.props.infoProduct(item)}
-                        >
-                          Більш про товар
-                        </Link>
-                      </div>
-                    </div>
-                  );
-                })
-              : this.state.currentItems.map((item) => {
-                  return (
-                    <div className="BestCard" key={item.id}>
-                      <div className="cardItems">
-                        <img src={item.img} className="img-card" />
-                        <span className="item-name">{item.name}</span>
-                        <span className="item-model">{item.model}</span>
-                        <div className="rating">
-                          <div className="stars">
-                            <i className="fa-sharp fa-solid fa-star"></i>
-                            <i className="fa-sharp fa-solid fa-star"></i>
-                            <i className="fa-sharp fa-solid fa-star"></i>
-                            <i className="fa-sharp fa-solid fa-star"></i>
-                            <i className="fa-sharp fa-solid fa-star"></i>
-                          </div>
-                          <div className="heart">
-                            <i
-                              className="fa-sharp fa-solid fa-heart"
-                              onClick={this.props.addClass}
-                            ></i>
-                          </div>
-                        </div>
-                        <div className="prices">
-                          <span className="item-price">
-                            {item.price} &#8372;{" "}
-                          </span>
-                          <span className="item-availability">
-                            В наявності 4
-                          </span>
-                        </div>
-                        <div className="buttons">
-                          <button
-                            className="item-besket-btn"
-                            onClick={() => this.props.addToOrder(item)}
-                          >
-                            <span>
-                              <i className="fa-sharp fa-solid fa-cart-shopping"></i>
-                              В корзину
-                            </span>
-                          </button>
-                          <button className="item-shop-btn">
-                            Купити в 1 клік
-                          </button>
-                        </div>
-                        <Link
-                          to="/product"
-                          className="product-details-btn"
-                          onClick={() => this.props.infoProduct(item)}
-                        >
-                          Більш про товар
-                        </Link>
-                      </div>
-                    </div>
-                  );
-                })}
-          </div>
+          <ProductCatalogSort
+            threeCard={this.threeCard}
+            twoCard={this.twoCard}
+          />
+          <Card
+            searchTerm={this.state.searchTerm}
+            searchResults={this.state.searchResults}
+            addClass={this.props.addClass}
+            addToOrder={this.props.addToOrder}
+            infoProduct={this.props.infoProduct}
+            currentItems={this.state.currentItems}
+          />
         </div>
-        <div>
-          <ul className=" list-group list-top">
-            {this.state.categories.map((el) => {
-              return (
-                <div key={el.key}>
-                  <li
-                    className="list-group-item list-item-filter-product hoverefect-category"
-                    onClick={() => this.choseCategory(el.key)}
-                  >
-                    {el.name}
-                  </li>
-                </div>
-              );
-            })}
-          </ul>
-          <ul
-            className=" list-group "
-            style={{
-              marginTop: "20px",
-            }}
-          >
-            <div className="list-group-item list-item-filter-product list-item-filter">
-              <span className="list-item-filter-name">Фільтр товарів</span>
-              <input
-                className="form-control "
-                type="search"
-                placeholder="пошук товару..."
-                aria-label="Search"
-                style={{
-                  width: "250px",
-                  marginTop: "20px",
-                }}
-                value={this.state.searchTerm}
-                onChange={this.handleSearch}
-              />
-              <div className="list-item-filter-prices">
-                <span className="list-item-filter-price">Ціна грн</span>
-                <div className="filter-price">
-                  <label className="filter-price-label">
-                    <input
-                      className="filter-price-input"
-                      placeholder="ВІД"
-                      value={this.state.minPrice}
-                      onChange={(e) =>
-                        this.setState({
-                          minPrice: e.target.value,
-                        })
-                      }
-                    />
-                  </label>
-                  <label className="filter-price-label">
-                    <input
-                      className="filter-price-input"
-                      placeholder="ДО"
-                      value={this.state.maxPrice}
-                      onChange={(e) =>
-                        this.setState({
-                          maxPrice: e.target.value,
-                        })
-                      }
-                    />
-                  </label>
-                </div>
-              </div>
-              <div className="list-item-producer">
-                <span className="list-item-producer-name">Виробник</span>
-                {this.state.producers.map((el) => {
-                  return (
-                    <div className="list-producer-filter" key={el.id}>
-                      <input
-                        type="checkbox"
-                        className="list-producer-filter-checkbox"
-                        checked={this.state.selectedProducers.includes(el.name)}
-                        onChange={() => this.choseProducer(el.name)}
-                      />
-                      <span className="list-producer-filter__producer">
-                        {el.name}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="list-item-novelty">
-                <span className="list-item-novelty-name">Нові товари</span>
-                <select className="list-item-novelty-select">
-                  {this.state.categories.map((el) => {
-                    return (
-                      <option
-                        key={el.key}
-                        onClick={() => this.choseCategory(el.key)}
-                      >
-                        {el.name}
-                      </option>
-                    );
-                  })}
-                </select>
-              </div>
-              <div className="list-item-show">
-                <button
-                  className="list-item-show-btn"
-                  onClick={this.showFunction}
-                >
-                  Показати
-                </button>
-              </div>
-            </div>
-          </ul>
-        </div>
+        <ProductCatalogFilter
+          categories={this.state.categories}
+          minPrice={this.state.minPrice}
+          maxPrice={this.state.maxPrice}
+          producers={this.state.producers}
+          selectedProducers={this.state.selectedProducers}
+          showFunction={this.showFunction}
+          choseCategory={this.choseCategory}
+          searchTerm={this.state.searchTerm}
+          handleSearch={this.handleSearch}
+        />
       </div>
     );
   }

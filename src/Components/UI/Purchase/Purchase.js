@@ -17,7 +17,6 @@ export default class Purchase extends Component {
                 className="contacts-date-item-form-number"
                 placeholder="Введіть номер телефону"
               />
-              {/* <button className="contacts-date-item-form-btn">Далі</button> */}
             </form>
           </div>
 
@@ -44,7 +43,6 @@ export default class Purchase extends Component {
                   Відділення НП номер 7
                 </option>
               </select>
-              {/* <button className="contacts-date-item-form-btn">Далі</button> */}
             </form>
           </div>
           <div className="payment-date-items">

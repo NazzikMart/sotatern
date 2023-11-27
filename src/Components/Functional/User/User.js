@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import "./User.css";
-import Bunuses from "./user-help-components/Bonuses/Bonuses.js";
-import Chosen from "./user-help-components/Chosen/Chosen.js";
-import Data from "./user-help-components/Date/Data.js";
-import Expectation from "./user-help-components/Expectation/Expectation.js";
-import Order from "./user-help-components/Order/Order.js";
-import Question from "./user-help-components/Question/Question.js";
-import Settings from "./user-help-components/Settings/Settings.js";
+import { Link } from "react-router-dom";
 
 export default class User extends Component {
   render() {
@@ -16,28 +10,46 @@ export default class User extends Component {
           <div className="left-menu-items">
             <ul className="list-group list-group-users">
               <li className="list-group-item list-group-item__user">
-                <i class="fa-solid fa-database"></i> <span>Мої дані</span>
+                <i class="fa-solid fa-database"></i>
+                <Link to="/date" className="link-user">
+                  Мої дані
+                </Link>
               </li>
               <li className="list-group-item list-group-item__user">
                 <i class="fa-brands fa-first-order"></i>
-                <span>Мої замовлення</span>
+                <Link to="purchase" className="link-user">
+                  Мої замовлення
+                </Link>
               </li>
               <li className="list-group-item list-group-item__user">
-                <i class="fa-solid fa-gear"></i> <span>Налаштування</span>
+                <i class="fa-solid fa-gear"></i>
+                <Link to="/settings" className="link-user">
+                  Налаштування
+                </Link>
               </li>
               <li className="list-group-item list-group-item__user">
-                <i class="fa-solid fa-list"></i> <span>Список очікування</span>
+                <i class="fa-solid fa-list"></i>
+                <Link to="listlike" className="link-user">
+                  Список очікування
+                </Link>
               </li>
               <li className="list-group-item list-group-item__user">
-                {" "}
-                <i class="fa-solid fa-check"></i> <span>Обрані</span>
+                <i class="fa-solid fa-check"></i>
+                <Link to="like" className="link-user">
+                  Обрані
+                </Link>
               </li>
               <li className="list-group-item list-group-item__user">
-                <i class="fa-solid fa-money-bill"></i> <span>Бонуси</span>
+                <i class="fa-solid fa-money-bill"></i>
+                <Link to="bonuse" className="link-user">
+                  Бонуси
+                </Link>
               </li>
               <li className="list-group-item list-group-item__user">
-                <i class="fa-solid fa-question"></i>{" "}
-                <span>Запитання та відповіді</span>
+                <i class="fa-solid fa-question"></i>
+                <Link to="infouser" className="link-user">
+                  Запитання та відповіді
+                </Link>
               </li>
               <li className="list-group-item list-group-item__user list-group-item__user-btn-logout">
                 Вийти

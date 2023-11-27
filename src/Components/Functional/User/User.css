@@ -83,6 +83,11 @@
     color: white;
 }
 
+.list-group-item__user:hover {
+    background-color: rgb(246, 87, 87);
+    color: white;
+}
+
 .user-information-details-items {
     background-color: rgb(245, 245, 245);
     padding: 30px;
@@ -141,6 +146,18 @@
 
 .list-group-item__user-btn-logout:hover {
     background-color: rgb(143, 143, 143);
+}
+
+.link-user {
+    color: black;
+    text-decoration: none;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.link-user:hover {
+    color: white;
+    text-decoration: none;
 }
 
 @media (max-width: 860px) {

@@ -23,7 +23,6 @@ export default class Besket extends Component {
       return order;
     });
 
-    // Оновіть суму товарів у кошику
     const totalCost = updatedOrders.reduce((accumulator, order) => {
       return accumulator + order.price * order.counter;
     }, 0);

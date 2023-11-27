@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Navbar.css";
 import { Route, Routes } from "react-router";
 import { Link } from "react-router-dom";
-
 import About from "../../UI/About/About.js";
 import ProductCatalog from "../../UI/ProductCatalog/ProductCatalog.js";
 import Contact from "../../UI/Contact/Contact.js";
@@ -54,7 +53,17 @@ export default class Navbar extends Component {
                   Про нас
                 </Link>
               </li>
-              <li className=" nav-item">
+              <li
+                className=" nav-item"
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  color: "rgb(212, 79, 79)",
+                  marginRight: "15px",
+                }}
+              >
                 <Link
                   to="/profile"
                   className="profile-link nav-link"
@@ -64,8 +73,18 @@ export default class Navbar extends Component {
                 >
                   Акунт
                 </Link>
+                <i class="fa-regular fa-user"></i>
               </li>
-              <li className=" nav-item">
+              <li
+                className=" nav-item"
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  color: "rgb(212, 79, 79)",
+                }}
+              >
                 <Link
                   to="/besket"
                   className="besket-link nav-link"
@@ -76,6 +95,7 @@ export default class Navbar extends Component {
                   {" "}
                   Кошик
                 </Link>
+                <i class="fa-solid fa-basket-shopping"></i>
               </li>
             </ul>
           </div>
@@ -107,6 +127,7 @@ export default class Navbar extends Component {
               to="/catalog"
               style={{
                 marginLeft: "30px",
+                borderRadius: "5px",
               }}
               className="product-catalog-btn navbar-btn"
             >
@@ -117,10 +138,11 @@ export default class Navbar extends Component {
             to="/remont"
             style={{
               marginLeft: "30px",
+              borderRadius: "5px",
             }}
             className="product-remont-btn navbar-btn"
           >
-            Ремонт техніки <i className="fa-solid fa-bars"></i>
+            Ремонт техніки <i class="fa-solid fa-laptop-file"></i>
           </Link>
         </nav>
 
@@ -139,6 +161,7 @@ export default class Navbar extends Component {
           <Route path="/about" element={<About />} />
           <Route path="/remont" element={<Remont />} />
           <Route path="/user" element={<User />} />
+
           <Route path="/purchase" element={<Purchase />} />
           <Route
             path="/catalog"
@@ -170,7 +193,6 @@ export default class Navbar extends Component {
             }
           />
           <Route path="/profile" element={<Profile />} />
-
           <Route
             path="/product"
             element={

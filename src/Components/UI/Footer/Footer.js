@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 export default class Footer extends Component {
   render() {
@@ -13,30 +14,16 @@ export default class Footer extends Component {
                   <h3>Силки</h3>
                   <ul>
                     <li>
-                      <a href="#">Товари</a>
+                      <Link to="/catalog">Товари</Link>
                     </li>
                     <li>
-                      <a href="#">Контакти</a>
+                      <Link to="/contact">Контакти</Link>
                     </li>
                     <li>
-                      <a href="#">Про нас</a>
+                      <Link to="/about">Про нас</Link>
                     </li>
                   </ul>
                 </div>
-                {/* <div class="col-sm-6 col-md-3 item">
-                  <h3>About</h3>
-                  <ul>
-                    <li>
-                      <a href="#">Company</a>
-                    </li>
-                    <li>
-                      <a href="#">Team</a>
-                    </li>
-                    <li>
-                      <a href="#">Careers</a>
-                    </li>
-                  </ul>
-                </div> */}
                 <div className="col-md-6 item text">
                   <h3>Сота - студія техніки</h3>
                   <p>
@@ -50,18 +37,18 @@ export default class Footer extends Component {
                   </p>
                 </div>
                 <div className="col item social">
-                  <a href="#">
+                  <Link to="#">
                     <i className="fa-brands fa-facebook"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to="#">
                     <i className="fa-brands fa-twitter"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to="#">
                     <i className="fa-brands fa-telegram"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to="https://www.instagram.com/sota.ternopil/">
                     <i className="fa-brands fa-instagram"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <p className="copyright">Сота - студія техніки © 2023</p>

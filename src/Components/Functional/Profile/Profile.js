@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import "./Profile.css";
@@ -13,7 +12,6 @@ export default function Profile() {
     setIsAcount(!isAccount);
   }
   const { register, handleSubmit } = useForm();
-  const [data, setData] = useState("");
   const [isAccount, setIsAcount] = useState(true);
 
   const handleRegistration = async (data) => {
@@ -80,9 +78,6 @@ export default function Profile() {
       ) : (
         <form className="profile-login" onSubmit={handleSubmit(handleLogin)}>
           <h2 className="login-name">Увійти</h2>
-          {/* <div className="profile-reg-name">
-          <input className="reg-name" placeholder="Введіть своє ім'я" />
-        </div> */}
           <div className="profile-log-number">
             <input
               className="log-number"

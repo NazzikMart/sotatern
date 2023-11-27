@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./BestSellers.css";
-import { Link } from "react-router-dom";
 import "../../media.css";
 import Card from "../Card/Card";
 
