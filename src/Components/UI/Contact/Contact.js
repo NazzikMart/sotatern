@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Contact.css";
+import ServiceCenter from "../ServiceCenter/ServiceCenter";
 
 export default class Contact extends Component {
   constructor(props) {
@@ -67,6 +68,7 @@ export default class Contact extends Component {
     const { name, phone, comment, errors } = this.state;
     return (
       <div className="contact">
+        <ServiceCenter />
         <div className="contact-name">Зв'язатися з нами</div>
 
         <div className="contact-info">

@@ -3,6 +3,7 @@ import FilterProduct from "../FilterProduct/FilterProduct";
 import BestSellers from "../BestSellers/BestSellers";
 import Header from "../../UI/Header/Header.js";
 import "../../media.css";
+import ServiceCenter from "../../UI/ServiceCenter/ServiceCenter.js";
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -43,6 +44,7 @@ export default class HomePage extends Component {
       <div>
         <Header />
         {/* <ProductCategories /> */}
+        <ServiceCenter />
         <span className="BestSellersName">Лідери продажів</span>
         <FilterProduct choseCategory={this.choseCategory} />
 

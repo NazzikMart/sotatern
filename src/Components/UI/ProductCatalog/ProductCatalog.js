@@ -3,6 +3,7 @@ import "./ProductCatalog.css";
 import ProductCatalogFilter from "../ProductCatalogFilter/ProductCatalogFilter.js";
 import ProductCatalogSort from "../ProductCatalogSort/ProductCatalogSort.js";
 import Card from "../Card/Card.js";
+import ServiceCenter from "../ServiceCenter/ServiceCenter.js";
 
 export default class ProductCatalog extends Component {
   constructor(props) {
@@ -320,36 +321,39 @@ export default class ProductCatalog extends Component {
       return <div>Щось пішло не так із компонентом ProductCatalog</div>;
     }
     return (
-      <div className="product-catalog-wrapper">
-        <div className="product-catalog">
-          <div className="product-catalog-name">Каталог товарів</div>
-          <ProductCatalogSort
-            threeCard={this.threeCard}
-            twoCard={this.twoCard}
-          />
-          <Card
+      <React.Fragment>
+        {/* <ServiceCenter /> */}
+        <div className="product-catalog-wrapper">
+          <div className="product-catalog">
+            <div className="product-catalog-name">Каталог товарів</div>
+            <ProductCatalogSort
+              threeCard={this.threeCard}
+              twoCard={this.twoCard}
+            />
+            <Card
+              searchTerm={this.state.searchTerm}
+              searchResults={this.state.searchResults}
+              addClass={this.props.addClass}
+              addToOrder={this.props.addToOrder}
+              infoProduct={this.props.infoProduct}
+              currentItems={this.state.currentItems}
+              choseProducer={this.choseProducer}
+            />
+          </div>
+          <ProductCatalogFilter
+            categories={this.state.categories}
+            minPrice={this.state.minPrice}
+            maxPrice={this.state.maxPrice}
+            producers={this.state.producers}
+            selectedProducers={this.state.selectedProducers}
+            showFunction={this.showFunction}
+            choseCategory={this.choseCategory}
             searchTerm={this.state.searchTerm}
-            searchResults={this.state.searchResults}
-            addClass={this.props.addClass}
-            addToOrder={this.props.addToOrder}
-            infoProduct={this.props.infoProduct}
-            currentItems={this.state.currentItems}
+            handleSearch={this.handleSearch}
             choseProducer={this.choseProducer}
           />
         </div>
-        <ProductCatalogFilter
-          categories={this.state.categories}
-          minPrice={this.state.minPrice}
-          maxPrice={this.state.maxPrice}
-          producers={this.state.producers}
-          selectedProducers={this.state.selectedProducers}
-          showFunction={this.showFunction}
-          choseCategory={this.choseCategory}
-          searchTerm={this.state.searchTerm}
-          handleSearch={this.handleSearch}
-          choseProducer={this.choseProducer}
-        />
-      </div>
+      </React.Fragment>
     );
   }
 }
