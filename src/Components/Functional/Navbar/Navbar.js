@@ -18,7 +18,12 @@ export default class Navbar extends Component {
   render() {
     return (
       <div className="navbar-wrapper">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav
+          className="navbar navbar-expand-lg navbar-dark bg-dark"
+          style={{
+            padding: "15px",
+          }}
+        >
           <button
             className="navbar-toggler"
             type="button"
@@ -54,15 +59,15 @@ export default class Navbar extends Component {
                 </Link>
               </li>
               <li
-                className=" nav-item"
+                className=" nav-item account-link"
                 style={{
                   display: "flex",
+
                   flexDirection: "row",
+
                   alignItems: "center",
                   justifyContent: "flex-start",
                   color: "rgba(0, 198, 94, 1)",
-
-                  marginRight: "15px",
                 }}
               >
                 <Link
@@ -77,10 +82,12 @@ export default class Navbar extends Component {
                 <i class="fa-regular fa-user"></i>
               </li>
               <li
-                className=" nav-item"
+                className="besket-link nav-item"
                 style={{
                   display: "flex",
+
                   flexDirection: "row",
+
                   alignItems: "center",
                   justifyContent: "flex-start",
                   color: "rgba(0, 198, 94, 1)",
@@ -111,7 +118,6 @@ export default class Navbar extends Component {
               <span>Електроніка та побутова техніка</span>
             </div>
           </div>
-
           <span className=" color-blue" to="/number">
             <i className="fa-solid fa-phone"></i> +380-97-46-13-997
           </span>

@@ -3,7 +3,15 @@ import "./ProductCatalog.css";
 import ProductCatalogFilter from "../ProductCatalogFilter/ProductCatalogFilter.js";
 import ProductCatalogSort from "../ProductCatalogSort/ProductCatalogSort.js";
 import Card from "../Card/Card.js";
-import ServiceCenter from "../ServiceCenter/ServiceCenter.js";
+import frame9 from "../../../img/Frame 29.png";
+import children from "../../../img/children.webp";
+import electronic from "../../../img/electronic.jpg";
+import home from "../../../img/home.jpg";
+import household from "../../../img/household.jpg";
+import kitchen from "../../../img/kitchen.jpg";
+import privatee from "../../../img/private.jpg";
+import telefon from "../../../img/telefon.jpg";
+import dog from "../../../img/dog.jpg";
 
 export default class ProductCatalog extends Component {
   constructor(props) {
@@ -322,36 +330,120 @@ export default class ProductCatalog extends Component {
     }
     return (
       <React.Fragment>
-        {/* <ServiceCenter /> */}
-        <div className="product-catalog-wrapper">
-          <div className="product-catalog">
-            <div className="product-catalog-name">Каталог товарів</div>
-            <ProductCatalogSort
-              threeCard={this.threeCard}
-              twoCard={this.twoCard}
-            />
-            <Card
+        <div className="product-catalog-wrapper-osn">
+          <div className="looking-product">
+            <div className="looking-product-name">Ви шукаєте:</div>
+            <div className="looking-product-items">
+              <div className="looking-product-item">
+                <img src={privatee} className="looking-product-item-img" />
+                <span>Особисті речі</span>
+              </div>
+              <div className="looking-product-item">
+                <img src={telefon} className="looking-product-item-img" />
+                <span>Телефони та аксесуари</span>
+              </div>
+              <div className="looking-product-item">
+                <img src={electronic} className="looking-product-item-img" />
+                <span>Електроніка</span>
+              </div>
+              <div className="looking-product-item">
+                <img src={household} className="looking-product-item-img" />
+                <span>Побутова техніка</span>
+              </div>
+              <div className="looking-product-item">
+                <img src={home} className="looking-product-item-img" />
+                <span>Будинок та сад</span>
+              </div>
+              <div className="looking-product-item">
+                <img src={children} className="looking-product-item-img" />
+                <span>Товари для дітей</span>
+              </div>
+              <div className="looking-product-item">
+                <img src={dog} className="looking-product-item-img" />
+                <span>Тварини</span>
+              </div>
+              <div className="looking-product-item">
+                <img src={kitchen} className="looking-product-item-img" />
+                <span>Кухона техніка</span>
+              </div>
+            </div>
+          </div>
+          <div className="services-product">
+            <div className="services-product-name">Сервіси та послуги</div>
+            <div className="services-product-items">
+              <div className="services-product-item">
+                <i class="fa-solid fa-truck"></i>
+                <p>Доставка</p>
+                <span>
+                  Перевірка при отриманні та можливість безкоштовно повернути
+                  товар
+                </span>
+              </div>
+              <div className="services-product-item">
+                <i class="fa-brands fa-sellsy"></i>
+                <p>Продати швидше</p>
+                <span>
+                  Нема часу чекати? Продайте свій товар нам і отримайте гроші
+                  вже зараз
+                </span>
+              </div>
+              <div className="services-product-item">
+                <i class="fa-solid fa-laptop-file"></i>
+                <p>Ремонт</p>
+                <span>Відремонтуємо будь-яку річ швидко та якісно</span>
+              </div>
+              <div className="services-product-item">
+                <i class="fa-solid fa-shop"></i>
+                <p>Магазини</p>
+                <span>Легко відкрийте свій інтернет-магазин</span>
+              </div>
+              <div className="services-product-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <p>Допоможи іншим</p>
+                <span>
+                  Передайте ваші речі дитячим будинкам та благодійним
+                  організаціям
+                </span>
+              </div>
+              <div className="services-product-item">
+                <i class="fa-solid fa-credit-card"></i>
+                <p>Товар в кредит</p>
+                <span>
+                  Можна купити будь який наш товар в кредит або митєву розтрочку
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="product-catalog-wrapper">
+            <div className="product-catalog">
+              <div className="product-catalog-name">Каталог товарів</div>
+              <ProductCatalogSort
+                threeCard={this.threeCard}
+                twoCard={this.twoCard}
+              />
+              <Card
+                searchTerm={this.state.searchTerm}
+                searchResults={this.state.searchResults}
+                addClass={this.props.addClass}
+                addToOrder={this.props.addToOrder}
+                infoProduct={this.props.infoProduct}
+                currentItems={this.state.currentItems}
+                choseProducer={this.choseProducer}
+              />
+            </div>
+            <ProductCatalogFilter
+              categories={this.state.categories}
+              minPrice={this.state.minPrice}
+              maxPrice={this.state.maxPrice}
+              producers={this.state.producers}
+              selectedProducers={this.state.selectedProducers}
+              showFunction={this.showFunction}
+              choseCategory={this.choseCategory}
               searchTerm={this.state.searchTerm}
-              searchResults={this.state.searchResults}
-              addClass={this.props.addClass}
-              addToOrder={this.props.addToOrder}
-              infoProduct={this.props.infoProduct}
-              currentItems={this.state.currentItems}
+              handleSearch={this.handleSearch}
               choseProducer={this.choseProducer}
             />
           </div>
-          <ProductCatalogFilter
-            categories={this.state.categories}
-            minPrice={this.state.minPrice}
-            maxPrice={this.state.maxPrice}
-            producers={this.state.producers}
-            selectedProducers={this.state.selectedProducers}
-            showFunction={this.showFunction}
-            choseCategory={this.choseCategory}
-            searchTerm={this.state.searchTerm}
-            handleSearch={this.handleSearch}
-            choseProducer={this.choseProducer}
-          />
         </div>
       </React.Fragment>
     );

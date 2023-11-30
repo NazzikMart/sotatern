@@ -46,38 +46,7 @@ export default class Product extends Component {
             </div>
           );
         })}
-        <div className="list-details">
-          {this.props.infoProducts.map((el) => {
-            return (
-              <div className="element-characteristics list-group">
-                <span className="element-characteristics-name list-group-item ">
-                  Основні характеристики
-                </span>
-                <div className="element-characteristics-material list-group-item items-details-item">
-                  Матеріал :<span>{el.material}</span>
-                </div>
-                <div className="element-characteristics-producer list-group-item items-details-item">
-                  Виробник :<span>{el.producer}</span>
-                </div>
-                <div className="element-characteristics-diagonal list-group-item items-details-item">
-                  {el.detailOne} :<span>{el.volume}</span>
-                </div>
-                <div className="element-characteristics-diagonal list-group-item items-details-item">
-                  {el.detailTwo} :<span>{el.memory}</span>
-                </div>
-                <div className="element-characteristics-diagonal list-group-item items-details-item">
-                  {el.detailThree} :<span>{el.ram}</span>
-                </div>
-                <div className="element-characteristics-diagonal list-group-item items-details-item">
-                  {el.detailFour} :<span>{el.color}</span>
-                </div>
-                <div className="element-characteristics-type list-group-item items-details-item">
-                  Тип :<span>{el.type}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <div className="list-details"></div>
       </div>
     );
   }

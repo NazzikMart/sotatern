@@ -177,6 +177,22 @@
     color: rgb(212, 79, 79);
 }
 
+.account-link {
+    display: "flex";
+    flex-direction: "row";
+    align-items: "center";
+    justify-content: "flex-start";
+    color: "rgba(0, 198, 94, 1)";
+    margin-right: "15px";
+
+}
+
+.profile-link {
+    color: "rgba(0, 198, 94, 1)",
+}
+
+.besket-link {}
+
 @media (max-width : 420px) {
     .logo-item__navbar {
         font-size: 20px;

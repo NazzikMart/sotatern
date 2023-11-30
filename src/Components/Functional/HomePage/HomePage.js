@@ -4,6 +4,7 @@ import BestSellers from "../BestSellers/BestSellers";
 import Header from "../../UI/Header/Header.js";
 import "../../media.css";
 import ServiceCenter from "../../UI/ServiceCenter/ServiceCenter.js";
+import "./HomePage.css";
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -15,7 +16,6 @@ export default class HomePage extends Component {
     };
     this.state.currentItems = this.props.product;
     this.choseCategory = this.choseCategory.bind(this);
-    // this.addToOrder = this.addToOrder.bind(this);
   }
 
   choseCategory(category) {
@@ -41,9 +41,9 @@ export default class HomePage extends Component {
       return <div>Щось пішло не так із компонентом HomePage.</div>;
     }
     return (
-      <div>
+      <div className="homepage-wrapper">
         <Header />
-        {/* <ProductCategories /> */}
+
         <ServiceCenter />
         <span className="BestSellersName">Лідери продажів</span>
         <FilterProduct choseCategory={this.choseCategory} />
@@ -54,6 +54,25 @@ export default class HomePage extends Component {
           infoProducts={this.props.infoProducts}
           infoProduct={this.props.infoProduct}
         />
+
+        <p className="desc-shop-sota">
+          "Студія техніки 'Сота' — ваш найкращий вибір для якісної та передової
+          кухонної техніки. Наш магазин пропонує широкий асортимент продукції
+          від провідних світових виробників, щоб забезпечити вашу кухню
+          найсучаснішим та надійним обладнанням. <br />
+          <br />У нашому асортименті ви знайдете інноваційні кухонні прилади,
+          які роблять процес готування легким та приємним. Від кавоварок та
+          мультиварок до соковитисків та блендерів — ми маємо все для того, щоб
+          ваша кухня стала справжнім центром гастрономії. <br />
+          <br /> Наша команда працює тільки з надійними постачальниками,
+          гарантуючи вам якість та довговічність кожного товару. Ми прагнемо
+          забезпечити клієнтів найнижчими цінами на ринку, роблячи техніку
+          доступною для всіх шанувальників кулінарії. <br /> <br />
+          Обирайте 'Сота' для того, щоб перетворити вашу кухню на місце, де
+          вирує справжнє кулінарне мистецтво. З нами ви отримаєте якість,
+          інновації та найкращі ціни — бо ваш комфорт та задоволення є нашим
+          пріоритетом."
+        </p>
       </div>
     );
   }
