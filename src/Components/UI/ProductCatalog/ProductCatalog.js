@@ -3,15 +3,7 @@ import "./ProductCatalog.css";
 import ProductCatalogFilter from "../ProductCatalogFilter/ProductCatalogFilter.js";
 import ProductCatalogSort from "../ProductCatalogSort/ProductCatalogSort.js";
 import Card from "../Card/Card.js";
-import frame9 from "../../../img/Frame 29.png";
-import children from "../../../img/children.webp";
-import electronic from "../../../img/electronic.jpg";
-import home from "../../../img/home.jpg";
-import household from "../../../img/household.jpg";
-import kitchen from "../../../img/kitchen.jpg";
-import privatee from "../../../img/private.jpg";
-import telefon from "../../../img/telefon.jpg";
-import dog from "../../../img/dog.jpg";
+import ServiceAndService from "../ServiceAndService/ServiceAndService.js";
 
 export default class ProductCatalog extends Component {
   constructor(props) {
@@ -40,16 +32,10 @@ export default class ProductCatalog extends Component {
           model: "SilverCrest SWKS 2000",
           category: "Kettle",
           id: 1,
-          material: " Алюміній",
-          detailOne: " Об'єм",
-          volume: " 2 літра",
-          detailTwo: "Потушність",
-          suffocation: "2000W",
-          detailThree: "Оперативна пам'ять",
           type: " Чайник",
           producer: "SilverCrest",
-          color: "Black",
           counter: 1,
+          heading: "kitchen",
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/import/3791650014461147.jpg",
         },
         {
@@ -57,17 +43,9 @@ export default class ProductCatalog extends Component {
           price: 1100,
           model: "Magio",
           category: "telephone",
-          material: " Метал",
-          detailOne: "Діагональ екрану",
-          detailTwo: "Пам'ять",
-          memory: "64 гб",
-          detailThree: "Оперативна пам'ять",
-          ram: "4 гб",
-          detailFour: "Колір",
-          color: "Black",
           volume: "16",
-          type: " Смартфон",
           producer: "Samsung",
+          heading: "phone",
           id: 2,
           counter: 1,
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/2/123_11_36.jpg",
@@ -76,6 +54,7 @@ export default class ProductCatalog extends Component {
           name: "Гриль",
           price: 1100,
           model: "SilverCrest",
+          heading: "kitchen",
           category: "Grill",
           producer: "SilverCrest",
           id: 3,
@@ -86,6 +65,7 @@ export default class ProductCatalog extends Component {
           name: "Мікрохвильовка",
           price: 1100,
           model: "Magio",
+          heading: "kitchen",
           category: "Microwave",
           producer: "Magio",
           id: 4,
@@ -96,6 +76,7 @@ export default class ProductCatalog extends Component {
           name: "Пилосос",
           price: 1100,
           model: "SilverCrest",
+          heading: "household",
           category: "VacuumCleaner",
           producer: "SilverCrest",
           id: 5,
@@ -106,6 +87,7 @@ export default class ProductCatalog extends Component {
           name: "Термокружка",
           price: 1100,
           model: "SeaBreeze",
+          heading: "kitchen",
           category: "ThermalMug",
           producer: "SeaBreeze",
           id: 6,
@@ -122,6 +104,43 @@ export default class ProductCatalog extends Component {
       searchResults: [],
       selectedProducers: [],
       cardPosition: "",
+      selectedCategories: [],
+      services: [
+        {
+          iconClass: "fa-solid fa-truck",
+          name: "Доставка",
+          description:
+            "Перевірка при отриманні та можливість безкоштовно повернути товар",
+        },
+        {
+          iconClass: "fa-brands fa-sellsy",
+          name: "Б/У техніка",
+          description:
+            "У нас також в наявності є вживана техніка за солодкими цінами",
+        },
+        {
+          iconClass: "fa-solid fa-laptop-file",
+          name: "Ремонт",
+          description: "Відремонтуємо будь-яку річ швидко та якісно",
+        },
+        {
+          iconClass: "fa-solid fa-shop",
+          name: "Магазини",
+          description: "Легко відкрийте свій інтернет-магазин",
+        },
+        {
+          iconClass: "fa-solid fa-circle-info",
+          name: "Допоможи іншим",
+          description:
+            "Передайте ваші речі дитячим будинкам та благодійним організаціям",
+        },
+        {
+          iconClass: "fa-solid fa-credit-card",
+          name: "Товар в кредит",
+          description:
+            "Можна купити будь який наш товар в кредит або митєву розтрочку",
+        },
+      ],
     };
 
     this.state.currentItems = this.state.product;
@@ -129,13 +148,13 @@ export default class ProductCatalog extends Component {
     this.renderElement = this.renderElement.bind(this);
     this.showFunction = this.showFunction.bind(this);
   }
-  choseCategory(category) {
+  choseCategory(category, heading) {
     if (category === "all") {
       this.setState({ currentItems: this.state.product });
     } else {
       this.setState({
         currentItems: this.state.product.filter((el) => {
-          return el.category === category;
+          return el.category === category || el.heading === heading;
         }),
       });
     }
@@ -331,89 +350,7 @@ export default class ProductCatalog extends Component {
     return (
       <React.Fragment>
         <div className="product-catalog-wrapper-osn">
-          <div className="looking-product">
-            <div className="looking-product-name">Ви шукаєте:</div>
-            <div className="looking-product-items">
-              <div className="looking-product-item">
-                <img src={privatee} className="looking-product-item-img" />
-                <span>Особисті речі</span>
-              </div>
-              <div className="looking-product-item">
-                <img src={telefon} className="looking-product-item-img" />
-                <span>Телефони та аксесуари</span>
-              </div>
-              <div className="looking-product-item">
-                <img src={electronic} className="looking-product-item-img" />
-                <span>Електроніка</span>
-              </div>
-              <div className="looking-product-item">
-                <img src={household} className="looking-product-item-img" />
-                <span>Побутова техніка</span>
-              </div>
-              <div className="looking-product-item">
-                <img src={home} className="looking-product-item-img" />
-                <span>Будинок та сад</span>
-              </div>
-              <div className="looking-product-item">
-                <img src={children} className="looking-product-item-img" />
-                <span>Товари для дітей</span>
-              </div>
-              <div className="looking-product-item">
-                <img src={dog} className="looking-product-item-img" />
-                <span>Тварини</span>
-              </div>
-              <div className="looking-product-item">
-                <img src={kitchen} className="looking-product-item-img" />
-                <span>Кухона техніка</span>
-              </div>
-            </div>
-          </div>
-          <div className="services-product">
-            <div className="services-product-name">Сервіси та послуги</div>
-            <div className="services-product-items">
-              <div className="services-product-item">
-                <i class="fa-solid fa-truck"></i>
-                <p>Доставка</p>
-                <span>
-                  Перевірка при отриманні та можливість безкоштовно повернути
-                  товар
-                </span>
-              </div>
-              <div className="services-product-item">
-                <i class="fa-brands fa-sellsy"></i>
-                <p>Продати швидше</p>
-                <span>
-                  Нема часу чекати? Продайте свій товар нам і отримайте гроші
-                  вже зараз
-                </span>
-              </div>
-              <div className="services-product-item">
-                <i class="fa-solid fa-laptop-file"></i>
-                <p>Ремонт</p>
-                <span>Відремонтуємо будь-яку річ швидко та якісно</span>
-              </div>
-              <div className="services-product-item">
-                <i class="fa-solid fa-shop"></i>
-                <p>Магазини</p>
-                <span>Легко відкрийте свій інтернет-магазин</span>
-              </div>
-              <div className="services-product-item">
-                <i class="fa-solid fa-circle-info"></i>
-                <p>Допоможи іншим</p>
-                <span>
-                  Передайте ваші речі дитячим будинкам та благодійним
-                  організаціям
-                </span>
-              </div>
-              <div className="services-product-item">
-                <i class="fa-solid fa-credit-card"></i>
-                <p>Товар в кредит</p>
-                <span>
-                  Можна купити будь який наш товар в кредит або митєву розтрочку
-                </span>
-              </div>
-            </div>
-          </div>
+          <ServiceAndService services={this.state.services} />
           <div className="product-catalog-wrapper">
             <div className="product-catalog">
               <div className="product-catalog-name">Каталог товарів</div>
@@ -438,7 +375,9 @@ export default class ProductCatalog extends Component {
               producers={this.state.producers}
               selectedProducers={this.state.selectedProducers}
               showFunction={this.showFunction}
-              choseCategory={this.choseCategory}
+              choseCategory={(category) =>
+                this.choseCategory(category, this.state.heading)
+              }
               searchTerm={this.state.searchTerm}
               handleSearch={this.handleSearch}
               choseProducer={this.choseProducer}

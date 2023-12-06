@@ -41,3 +41,23 @@
     border: none;
     margin-top: 50px;
 }
+
+.service-centet-remont-btn {
+    display: flex;
+    width: 140px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(0, 198, 94, 1);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.service-centet-remont-btn:hover {
+    color: white;
+    text-decoration: none;
+    background: rgb(0, 147, 68);
+}
