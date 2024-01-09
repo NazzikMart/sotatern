@@ -539,3 +539,17 @@
         width: 100%;
     }
 }
+
+
+.threeCard {
+    width: 30%;
+    flex-direction: row;
+    margin-right: 0;
+    margin-left: 0;
+    align-items: center;
+}
+
+.threeCard-new {
+    flex-direction: column;
+    width: 100%;
+}

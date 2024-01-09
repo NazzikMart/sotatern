@@ -5,6 +5,10 @@ import Header from "../../UI/Header/Header.js";
 import "../../media.css";
 import ServiceCenter from "../../UI/ServiceCenter/ServiceCenter.js";
 import "./HomePage.css";
+import ip1 from '../../../img/ip1.jpg'
+import ip2 from '../../../img/ip2.jpg'
+import ip3 from '../../../img/ip13.jpg'
+import ip4 from '../../../img/ip4.jpg'
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -54,25 +58,59 @@ export default class HomePage extends Component {
           infoProducts={this.props.infoProducts}
           infoProduct={this.props.infoProduct}
         />
+  <div class="product">
+        <div class="product-title">
+            ОБИРИ НОВИЙ ГАДЖЕТ
+        </div>
 
-        <p className="desc-shop-sota">
-          "Студія техніки 'Сота' — ваш найкращий вибір для якісної та передової
-          кухонної техніки. Наш магазин пропонує широкий асортимент продукції
-          від провідних світових виробників, щоб забезпечити вашу кухню
-          найсучаснішим та надійним обладнанням. <br />
-          <br />У нашому асортименті ви знайдете інноваційні кухонні прилади,
-          які роблять процес готування легким та приємним. Від кавоварок та
-          мультиварок до соковитисків та блендерів — ми маємо все для того, щоб
-          ваша кухня стала справжнім центром гастрономії. <br />
-          <br /> Наша команда працює тільки з надійними постачальниками,
-          гарантуючи вам якість та довговічність кожного товару. Ми прагнемо
-          забезпечити клієнтів найнижчими цінами на ринку, роблячи техніку
-          доступною для всіх шанувальників кулінарії. <br /> <br />
-          Обирайте 'Сота' для того, щоб перетворити вашу кухню на місце, де
-          вирує справжнє кулінарне мистецтво. З нами ви отримаєте якість,
-          інновації та найкращі ціни — бо ваш комфорт та задоволення є нашим
-          пріоритетом."
-        </p>
+        <div class="product-items">
+            <div class="product-item">
+                <div class="product-item__img">
+                    <img class="product-item__images" src={ip1} alt="" />
+                </div>
+                <div class="product-item__name">
+                    Gold
+                </div>
+                <div class="product-item__desc">
+                    Золотий
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-item__img">
+                    <img class="product-item__images" src={ip2} alt="" />
+                </div>
+                <div class="product-item__name">
+                    Black
+                </div>
+                <div class="product-item__desc">
+                    Чорний
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-item__img">
+                    <img class="product-item__images" src={ip3} alt="" />
+                </div>
+                <div class="product-item__name">
+                    Silver
+                </div>
+                <div class="product-item__desc">
+                    Сріблястий
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-item__img">
+                    <img class="product-item__images" src={ip3} alt="" />
+                </div>
+                <div class="product-item__name">
+                    Silver
+                </div>
+                <div class="product-item__desc">
+                    Сріблястий
+                </div>
+            </div>
+        </div>
+      </div>
+      <button className="btn-shop-ip">Замовити</button>
       </div>
     );
   }

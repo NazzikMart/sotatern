@@ -46,7 +46,7 @@ export default class Card extends Component {
                   className="product-details-btn"
                   onClick={() => this.props.infoProduct(item)}
                 >
-                  Більш про товар
+                  Більше про товар
                 </Link>
               </div>
             </div>

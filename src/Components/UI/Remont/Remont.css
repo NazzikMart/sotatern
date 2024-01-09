@@ -39,6 +39,13 @@ section {
     margin: 10px;
     width: 30%;
     padding: 30px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.repair-service:hover {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .contact-form-remont {
@@ -59,20 +66,51 @@ textarea {
     margin-bottom: 10px;
     box-sizing: border-box;
     outline: none;
+}
+
+input:hover,
+textarea:hover {
     border: 2px solid rgba(0, 198, 94, 1);
     color: rgba(0, 198, 94, 1);
-
 }
+
+input:active,
+textarea:active {
+    border: 2px solid rgba(0, 198, 94, 1);
+    color: rgba(0, 198, 94, 1);
+}
+
+input:focus,
+textarea:focus {
+    border: 2px solid rgba(0, 198, 94, 1);
+    color: rgba(0, 198, 94, 1);
+}
+
+
 
 .contact-form-remont button {
     background: rgba(0, 198, 94, 1);
-
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+
+.contact-form-remont button:hover {
+    transform: translate(1.09);
+}
+
+.contact-form-remont button:focus {
+    transform: translate(1.09);
+}
+
+.contact-form-remont button:active {
+    transform: translate(1.09);
+}
+
 
 .remont-name {
     width: 100%;

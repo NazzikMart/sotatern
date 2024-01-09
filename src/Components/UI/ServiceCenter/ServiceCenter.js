@@ -14,7 +14,7 @@ export default function ServiceCenter() {
         </Link>
       </div>
       <div className="service-center__img">
-        <img src={remont} />
+        <img src={remont} className="service-center__images" />
       </div>
     </div>
   );

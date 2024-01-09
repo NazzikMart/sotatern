@@ -61,3 +61,27 @@
     text-decoration: none;
     background: rgb(0, 147, 68);
 }
+
+
+
+@media screen and (max-width : 750px) {
+    .service-center {
+        flex-direction: column;
+        margin: 0;
+        margin-bottom: 30px;
+        padding: 0;
+        width: 100%;
+        justify-content: space-around;
+
+    }
+
+    .service-center img {
+        width: 100px;
+        margin-top: 0;
+    }
+
+    .service-center__content {
+        margin: 0;
+        padding: 20px;
+    }
+}

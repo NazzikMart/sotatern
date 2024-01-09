@@ -27,9 +27,9 @@ export default class ProductCatalog extends Component {
       ],
       product: [
         {
-          name: "Чайник",
+          name: "Чайник SilverCrest",
           price: 1100,
-          model: "SilverCrest SWKS 2000",
+          model: "SilverCrest",
           category: "Kettle",
           id: 1,
           type: " Чайник",
@@ -39,19 +39,19 @@ export default class ProductCatalog extends Component {
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/import/3791650014461147.jpg",
         },
         {
-          name: "Телефон",
-          price: 1100,
-          model: "Magio",
+          name: "Телефон Poco c40",
+          price: 5600,
+          model: "Poco",
           category: "telephone",
           volume: "16",
-          producer: "Samsung",
+          producer: "Poco",
           heading: "phone",
           id: 2,
           counter: 1,
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/2/123_11_36.jpg",
         },
         {
-          name: "Гриль",
+          name: "Гриль SilverCrest",
           price: 1100,
           model: "SilverCrest",
           heading: "kitchen",
@@ -62,7 +62,7 @@ export default class ProductCatalog extends Component {
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/g/c/gc772d30-1.jpg",
         },
         {
-          name: "Мікрохвильовка",
+          name: "Мікрохвильовка Magio",
           price: 1100,
           model: "Magio",
           heading: "kitchen",
@@ -73,7 +73,7 @@ export default class ProductCatalog extends Component {
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/1/5/1574995.jpg",
         },
         {
-          name: "Пилосос",
+          name: "Пилосос SilverCrest",
           price: 1100,
           model: "SilverCrest",
           heading: "household",
@@ -84,7 +84,7 @@ export default class ProductCatalog extends Component {
           img: "https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/3/2/3214_2211400052.1200x1200.jpg",
         },
         {
-          name: "Термокружка",
+          name: "Термокружка SeaBreeze",
           price: 1100,
           model: "SeaBreeze",
           heading: "kitchen",
@@ -105,6 +105,7 @@ export default class ProductCatalog extends Component {
       selectedProducers: [],
       cardPosition: "",
       selectedCategories: [],
+      renderCart: false,
       services: [
         {
           iconClass: "fa-solid fa-truck",
@@ -357,6 +358,7 @@ export default class ProductCatalog extends Component {
               <ProductCatalogSort
                 threeCard={this.threeCard}
                 twoCard={this.twoCard}
+                renderCart={this.state.renderCart}
               />
               <Card
                 searchTerm={this.state.searchTerm}
@@ -366,6 +368,7 @@ export default class ProductCatalog extends Component {
                 infoProduct={this.props.infoProduct}
                 currentItems={this.state.currentItems}
                 choseProducer={this.choseProducer}
+                renderCart={this.state.renderCart}
               />
             </div>
             <ProductCatalogFilter

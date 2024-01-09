@@ -22,7 +22,7 @@ class App extends React.Component {
         },
         {
           name: "Телефон",
-          price: 1100,
+          price: 5600,
           model: "SilverCrest",
           category: "telephone",
           id: 2,

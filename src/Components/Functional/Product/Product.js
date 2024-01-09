@@ -19,7 +19,7 @@ export default class Product extends Component {
               </div>
               <div className="element-product-details">
                 <div className="element-product-details-name">
-                  {el.name} {el.model}
+                  {el.name} 
                 </div>
                 <div className="element-product-details-article">
                   Артикль: <span>{el.id}</span>
