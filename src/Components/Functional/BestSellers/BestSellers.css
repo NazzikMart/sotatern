@@ -146,7 +146,7 @@
 
 @media (max-width: 1500px) {
     .BestSellers {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .BestCard {
